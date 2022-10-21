@@ -1,0 +1,159 @@
+.Top{
+    #body{
+        .body-main{
+            // 侧边栏
+            .aside{
+
+                .aside-main{
+                    // 导航栏
+                    .nav{
+                        :hover{
+                            background: linear-gradient(to right,#ed6e9f,#ec8c6a);
+                            color: #ffffff;
+                        }
+                        display: flex;
+                        width: 240px;
+                        height: 40px;
+                        :not(:first-child){
+                            margin: auto 0.625rem;
+                        }
+                        #click{
+                            width: 75px;
+                            height: 28px;
+                            opacity: 1;
+                            color: #ffffff;
+                            background: linear-gradient(to right,#ed6e9f,#ec8c6a);
+                            span{
+                                display: inherit;
+                            }
+                        }
+                    }
+                    .nav>div{
+                        width: 18px;
+                        height: 28px;
+                        padding: 5px 15px;
+                        background-color: rgb(211, 211, 211);
+                        text-align: center;
+                        font-size: 0.875em;
+                        line-height: 28px;
+                        padding: 0.3125rem 0.9375rem;
+                        color: #888;
+                        border-radius: 0.625rem;
+                        opacity: 0.7;
+                        display: flex;
+                        span{
+                            display: none;
+                            word-break: keep-all;
+                        }
+                        i{
+                            width: 14px;
+                            font-size: 20px;
+                            margin-top: 5px;
+                        }
+
+
+                    }
+                        // 主体
+                        .nav-item{
+                            width: 240px;
+                            min-height: 500px;
+                            #active{
+                                display: block;
+                                width: 240px;
+                                min-height: 600px;
+                            }
+                            .catalogue{
+                                ul{
+                                    margin-top: 30px;
+                                    li{
+                                        margin-top: 15px;
+                                        text-indent: 10px;
+                                        
+                                    }
+                                }
+                                .catalogue-list{
+                                    .is-active-link::before{
+                                        opacity: 1;
+                                    }
+                                    ::before{
+                                        height: 25px;
+                                        width: 4px;
+                                        opacity: 0;
+                                    }
+                                    a:hover{
+                                        color: rgb(60, 60, 60);
+                                    }
+                                    ol{
+                                        li{
+                                            ol{
+                                                list-style: decimal ;
+                                                padding-left: 30px;
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            .connect{
+                                ul{
+                                    margin-top: 30px;
+                                    li{
+                                        margin-top: 15px;
+                                        text-indent: 10px;
+                                        
+                                    }
+                                }
+                            }
+                        }
+                        .nav-item>div{
+                            display: none;
+
+                        }
+                }
+            }
+
+            // 文章主体
+            .article{
+                .article-main{
+                    h1{
+                        text-align: center;
+                        font-size: 30px;
+                        line-height: 40px;
+                        padding: 5px;
+                        margin-bottom: 25px;
+                    }
+                    h2{
+                        font-size: 26px;
+                        line-height: 35px;
+                        margin-bottom: 10px;
+                    }
+                    h3{
+                        font-size: 24px;
+                        line-height: 30px;
+                        margin-bottom: 10px;
+                    }
+                    p{
+                        text-indent: 50px;
+                        font-size: 22px;
+                        line-height: 35px;
+                        margin-bottom: 15px;
+                        color: rgb(63, 63, 63);
+                    }
+                    :hover{
+                        color: #000;
+                    }
+                    ul,ol{
+                        li{
+                            text-indent: 100px;
+                            font-size: 20px;  
+                        }
+                                              
+                    }
+                    a{
+                        color: rgb(248, 173, 224);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冷暖自知</title>
+    <!--引入font-awesome图形文字组件库，4.7.0版本-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <!--引入jQuery -->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <!--公共css样式-->
+    <link rel="stylesheet" href="./css/publicCss.css">
+    <!-- 目录生成tocbot css引入 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+    
+
+    <!--首页css样式-->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 引入文章css样式 -->
+    <link rel="stylesheet" href="./css/blog.css">
+
+</head>
+<body>
+    <!-- 顶级元素  -->
+    <div class="Top">
+        <!-- 头部 -->
+        <header id ="header">
+            <!-- 版心 -->
+            <div class="header-main">
+                <!-- 左侧logo/网名 -->
+                <div class="logo">
+                    <h3>
+                        Lifeline
+                    </h3>
+                </div>
+                <!-- 左侧搜索栏 -->
+                <div class="search">
+                    <!-- form表单 -->
+                    <form class="search-form">
+                        <!-- 搜索框 -->
+                        <input type="text" placeholder="Search or jump to..." class="search-text">
+                        <!-- 提交按钮 -->
+                        <button class="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <!-- 左侧导航栏 -->
+                <div class="header-nav">
+                    <!-- 版心 -->
+                    <nav class="header-nav-main">
+                        <!-- 导航无序列表 -->
+                        <ul class="nav">
+                            <!-- 设置相对定位作为下拉框的父盒子 -->
+                            <li class="nav-item" data-index="0" id="item-0">
+                                <a href="index.html"> 
+                                    <i class="fa fa-home"></i>
+                                    <span>主页小窝</span>
+                                </a>
+                            </li>
+                            <li class="nav-item" data-index="1" id="item-1">
+                                <a class="to-about" href="about.html"> 
+                                    <i class="fa fa-gratipay"></i>
+                                    <span>了解一下</span>
+                                </a>
+                            </li>
+                            <li class="nav-item" data-index="2" id="item-2">
+                                <a href="#"  class="hidden"> 
+                                    <i class="fa fa-leaf"></i>
+                                    <span>个人随笔</span>
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <!-- 下拉隐藏框 -->
+                                <ul class="submenu">
+                                    <li class="item">
+                                        <a href="article.html" class="to-article">
+                                            <i class="fa fa-pencil-square"></i>
+                                            <span>文章</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="classify.html" class="to-classify">
+                                            <i class="fa fa-list"></i>
+                                            <span>分类</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="tag.html" class="to-tag">
+                                            <i class="fa fa-tag"></i>
+                                            <span>标签</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+            </div>
+        </header>  
+        <!-- 主体 -->
+        <div id="body">
+            <!-- 版心 -->
+            <div class="body-main">
+                <!-- 侧边绝对定位个性栏 -->
+                <div class="aside">
+                    <!-- 版心元素 -->
+                    <div class="aside-main">
+                        <div class="nav">
+                            <div class="catalogue" id="click">
+                                <i class="fa fa-list-ol"></i>
+                                <span>文章目录</span>
+                            </div>
+                            <div class="connect">
+                                <i class="fa fa-sitemap"></i>
+                                <span>相关文章</span>
+                            </div>
+                            <div class="about-me">
+                                <i class="fa fa-home"></i>
+                                <span>站点一览</span>
+                            </div>
+                        </div>
+                        <div class="nav-item">
+                            <!-- 目录 -->
+                            <div class="catalogue" id="active">
+                                <ul class="catalogue-list">
+
+                                </ul>
+                            </div>
+                            <div class="connect">
+                                <ul>
+                                    <li>
+                                        <a href="blog.html">
+                                            <span>提问的智慧</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="about-me">
+                                <!-- 头像及简介 -->
+                                <div class="author">
+                                    <img class="logo" src="./resources/logo.jpg">
+                                    <p>Lifeline</p>
+                                    <div class="description">前路昭然,你我共进</div>
+                                </div>
+                                <!-- 导航栏 -->
+                                <nav class="state">
+                                    <!-- 文章 -->
+                                    <div class="item-article">
+                                        <a href="article.html" class="to-article">
+                                            <span class="count">16</span>
+                                            <span class="name">文章</span>
+                                        </a>
+                                    </div>
+                                    <!-- 分类 -->
+                                    <div class="item-categories">
+                                        <a href="classify.html" class="to-classify">
+                                            <span class="count">8</span>
+                                            <span class="name">分类</span>
+                                        </a>
+                                    </div>
+                                    <!-- 标签 -->
+                                    <div class="item-tags">
+                                        <a href="tag.html" class="to-tag">
+                                            <span class="count">9</span>
+                                            <span class="name">标签</span>
+                                        </a>
+                                    </div>
+                                </nav>
+                                <!-- 联系方式图标 -->
+                                <div class="social">
+                                    <a href="https://github.com/Lifelinexie">
+                                        <i class="fa fa-github fa-lg" id="github"></i>
+                                    </a>
+                                    <a href="https://weibo.com">
+                                        <i class="fa fa-weibo fa-lg" id="weiBo"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-address-card fa-lg" id="address-card"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-envelope fa-lg" id="envelope"></i>
+                                    </a>
+                                </div>
+                                <!-- 侧边导航条 -->
+                                <ul class="menu"> 
+                                    <li class="item" id="now-index">
+                                        <a href="index.html">
+                                            <i class="fa fa-home"></i>
+                                            主页小窝
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="about.html" class="to-about">
+                                            <i class="fa fa-gratipay"></i>
+                                            了解一下
+                                        </a>
+                                    </li>
+                                    <li class="item-dropdown">
+                                        <ul class="item">
+                                            <a href="#" class="to-about">
+                                                <i class="fa fa-leaf"></i>
+                                                个人随笔
+                                        </a>
+                                        </ul>
+                                        
+                                        
+                                        <ul class="hidden">
+                                            <li class="menu-item">
+                                                <a class="to-article" href="article.html" >
+                                                    <i class="fa fa-pencil-square"></i>
+                                                    <span>文章</span>
+                                                </a>
+                                                
+                                            </li>
+                                            <li class="menu-item">
+                                                <a class="to-classify" href="classify.html">
+                                                    <i class="fa fa-list"></i>
+                                                    <span>分类</span>
+                                                </a>
+                                                
+                                            </li>
+                                            <li class="menu-item">
+                                                <a class="to-tag" href="tag.html">
+                                                    <i class="fa fa-tag"></i>
+                                                <span>标签</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 文章卡片 -->
+                <div class="article">
+                    <!-- 版心 -->
+                    <div class="article-main">
+
+                        <h1>提问的智慧</h1>
+                        
+                        <h2 id="section1">简介</h2> 
+                        <p>在<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fwww.catb.org%2F~esr%2Ffaqs%2Fhacker-howto.html">黑客 </a> 的世界里&#xff0c;当你拋出一个技术问题时&#xff0c;最终是否能得到有用的回答&#xff0c;往往取决于你所提问和追问的方式。本指南将教你如何正确的提问以获得你满意的答案。</p> 
+                        <p>不只是黑客&#xff0c;现在开放源代码&#xff08;Open Source&#xff09;软件已经相当盛行&#xff0c;你常常也可以由其他有经验的使用者身上得到好答案&#xff0c;这是件<strong><em>好事</em></strong>&#xff1b;使用者比起黑客来&#xff0c;往往对那些新手常遇到的问题更宽容一些。然而&#xff0c;将有经验的使用者视为黑客&#xff0c;并采用本指南所提的方法与他们沟通&#xff0c;同样也是能从他们身上得到满意回答的最有效方式。</p> 
+                        <p>首先你应该明白&#xff0c;黑客们喜爱有挑战性的问题&#xff0c;或者能激发我们思维的好问题。如果我们并非如此&#xff0c;那我们也不会成为你想询问的对象。如果你给了我们一个值得反复咀嚼玩味的好问题&#xff0c;我们自会对你感激不尽。好问题是激励&#xff0c;是厚礼。好问题可以提高我们的理解力&#xff0c;而且通常会暴露我们以前从没意识到或者思考过的问题。对黑客而言&#xff0c;&#34;好问题&#xff01;&#34;是诚挚的大力称赞。</p> 
+                        <p>尽管如此&#xff0c;黑客们有着蔑视或傲慢面对简单问题的坏名声&#xff0c;这有时让我们看起来对新手、无知者似乎较有敌意&#xff0c;但其实不是那样的。</p> 
+                        <p>我们不讳言我们对那些不愿思考、或者在发问前不做他们该做的事的人的蔑视。那些人是时间杀手 -– 他们只想索取&#xff0c;从不付出&#xff0c;消耗我们可用在更有趣的问题或更值得回答的人身上的时间。我们称这样的人为 <code>失败者&#xff08;撸瑟&#xff09;</code> &#xff08;由于历史原因&#xff0c;我们有时把它拼作 <code>lusers</code>&#xff09;。</p> 
+                        <p>我们意识到许多人只是想使用我们写的软件&#xff0c;他们对学习技术细节没有兴趣。对大多数人而言&#xff0c;电脑只是种工具&#xff0c;是种达到目的的手段而已。他们有自己的生活并且有更要紧的事要做。我们了解这点&#xff0c;也从不指望每个人都对这些让我们着迷的技术问题感兴趣。尽管如此&#xff0c;我们回答问题的风格是指向那些真正对此有兴趣并愿意主动参与解决问题的人&#xff0c;这一点不会变&#xff0c;也不该变。如果连这都变了&#xff0c;我们就是在降低做自己最擅长的事情上的效率。</p> 
+                        <p>我们&#xff08;在很大程度上&#xff09;是自愿的&#xff0c;从繁忙的生活中抽出时间来解答疑惑&#xff0c;而且时常被提问淹没。所以我们无情的滤掉一些话题&#xff0c;特别是拋弃那些看起来像失败者的家伙&#xff0c;以便更高效的利用时间来回答<code>赢家&#xff08;winner&#xff09;</code>的问题。</p> 
+                        <p>如果你厌恶我们的态度&#xff0c;高高在上&#xff0c;或过于傲慢&#xff0c;不妨也设身处地想想。我们并没有要求你向我们屈服 -- 事实上&#xff0c;我们大多数人非常乐意与你平等地交流&#xff0c;只要你付出小小努力来满足基本要求&#xff0c;我们就会欢迎你加入我们的文化。但让我们帮助那些不愿意帮助自己的人是没有效率的。无知没有关系&#xff0c;但装白痴就是不行。</p> 
+                        <p>所以&#xff0c;你不必在技术上很在行才能吸引我们的注意&#xff0c;但你必须表现出能引导你变得在行的特质 -- 机敏、有想法、善于观察、乐于主动参与解决问题。如果你做不到这些使你与众不同的事情&#xff0c;我们建议你花点钱找家商业公司签个技术支持服务合同&#xff0c;而不是要求黑客个人无偿地帮助你。</p> 
+                        <p>如果你决定向我们求助&#xff0c;当然你也不希望被视为失败者&#xff0c;更不愿成为失败者中的一员。能立刻得到快速并有效答案的最好方法&#xff0c;就是像赢家那样提问 -- 聪明、自信、有解决问题的思路&#xff0c;只是偶尔在特定的问题上需要获得一点帮助。</p> 
+                        <p>&#xff08;欢迎对本指南提出改进意见。你可以 email 你的建议至 <a href="https://links.jianshu.com/go?to&#61;esr%40thyrsus.com">esr&#64;thyrsus.com</a> 或 <a href="https://links.jianshu.com/go?to&#61;respond-auto%40linuxmafia.com">respond-auto&#64;linuxmafia.com</a>。然而请注意&#xff0c;本文并非<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fwww.ietf.org%2Frfc%2Frfc1855.txt">网络礼节 </a> 的通用指南&#xff0c;而我们通常会拒绝无助于在技术论坛得到有用答案的建议。&#xff09;</p> 
+                        <h2 id="section2">在提问之前</h2> 
+                        <p>在你准备要通过电子邮件、新闻群组或者聊天室提出技术问题前&#xff0c;请先做到以下事情&#xff1a;</p> 
+                        <ol><li>尝试在你准备提问的论坛的旧文章中搜索答案。</li><li>尝试上网搜索以找到答案。</li><li>尝试阅读手册以找到答案。</li><li>尝试阅读常见问题文件&#xff08;FAQ&#xff09;以找到答案。</li><li>尝试自己检查或试验以找到答案</li><li>向你身边的强者朋友打听以找到答案。</li><li>如果你是程序开发者&#xff0c;请尝试阅读源代码以找到答案</li></ol>
+                        <p>当你提出问题的时候&#xff0c;请先表明你已经做了上述的努力&#xff1b;这将有助于树立你并不是一个不劳而获且浪费别人的时间的提问者。如果你能一并表达在做了上述努力的过程中所<strong><em>学到</em></strong>的东西会更好&#xff0c;因为我们更乐于回答那些表现出能从答案中学习的人的问题。</p> 
+                        <p>运用某些策略&#xff0c;比如先用 Google 搜索你所遇到的各种错误信息&#xff08;既搜索<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fgroups.google.com%2F">Google 论坛 </a>&#xff0c;也搜索网页&#xff09;&#xff0c;这样很可能直接就找到了能解决问题的文件或邮件列表线索。即使没有结果&#xff0c;在邮件列表或新闻组寻求帮助时加上一句 <code>我在 Google 中搜过下列句子但没有找到什么有用的东西</code> 也是件好事&#xff0c;即使它只是表明了搜索引擎不能提供哪些帮助。这么做&#xff08;加上搜索过的字串&#xff09;也让遇到相似问题的其他人能被搜索引擎引导到你的提问来。</p> 
+                        <p>别着急&#xff0c;不要指望几秒钟的 Google 搜索就能解决一个复杂的问题。在向专家求助之前&#xff0c;再阅读一下常见问题文件&#xff08;FAQ&#xff09;、放轻松、坐舒服一些&#xff0c;再花点时间思考一下这个问题。相信我们&#xff0c;他们能从你的提问看出你做了多少阅读与思考&#xff0c;如果你是有备而来&#xff0c;将更有可能得到解答。不要将所有问题一股脑拋出&#xff0c;只因你的第一次搜索没有找到答案&#xff08;或者找到太多答案&#xff09;。</p> 
+                        <p>准备好你的问题&#xff0c;再将问题仔细的思考过一遍&#xff0c;因为草率的发问只能得到草率的回答&#xff0c;或者根本得不到任何答案。越是能表现出在寻求帮助前你为解决问题所付出的努力&#xff0c;你越有可能得到实质性的帮助。</p> 
+                        <p>小心别问错了问题。如果你的问题基于错误的假设&#xff0c;某个普通黑客&#xff08;J. Random Hacker&#xff09;多半会一边在心里想着<code>蠢问题…</code>&#xff0c; 一边用无意义的字面解释来答复你&#xff0c;希望着你会从问题的回答&#xff08;而非你想得到的答案&#xff09;中汲取教训。</p> 
+                        <p>绝不要自以为<strong><em>够格</em></strong>得到答案&#xff0c;你没有&#xff1b;你并没有。毕竟你没有为这种服务支付任何报酬。你将会是自己去<strong><em>挣到</em></strong>一个答案&#xff0c;靠提出有内涵的、有趣的、有思维激励作用的问题 --一个有潜力能贡献社区经验的问题&#xff0c;而不仅仅是被动的从他人处索取知识。</p> 
+                        <p>另一方面&#xff0c;表明你愿意在找答案的过程中做点什么是一个非常好的开端。<code>谁能给点提示&#xff1f;</code>、<code>我的这个例子里缺了什么&#xff1f;</code>以及<code>我应该检查什么地方</code>比<code>请把我需要的确切的过程贴出来</code>更容易得到答复。因为你表现出只要有人能指个正确方向&#xff0c;你就有完成它的能力和决心。</p> 
+                        <h2 id="section3">当你提问时</h2> 
+                        <h3 id="section3-1">慎选提问的论坛</h3> 
+                        <p>小心选择你要提问的场合。如果你做了下述的事情&#xff0c;你很可能被忽略掉或者被看作失败者&#xff1a;</p> 
+                        <ul><li>在与主题不合的论坛上贴出你的问题</li><li>在探讨进阶技术问题的论坛张贴非常初级的问题&#xff1b;反之亦然</li><li>在太多的不同新闻群组上重复转贴同样的问题&#xff08;cross-post&#xff09;</li><li>向既非熟人也没有义务解决你问题的人发送私人电邮</li></ul>
+                        <p>黑客会剔除掉那些搞错场合的问题&#xff0c;以保护他们沟通的渠道不被无关的东西淹没。你不会想让这种事发生在自己身上的。</p> 
+                        <p>因此&#xff0c;第一步是找到对的论坛。再说一次&#xff0c;Google 和其它搜索引擎还是你的朋友&#xff0c;用它们来找到与你遭遇到困难的软硬件问题最相关的网站。通常那儿都有常见问题&#xff08;FAQ&#xff09;、邮件列表及相关说明文件的链接。如果你的努力&#xff08;包括<strong><em>阅读</em></strong>FAQ&#xff09;都没有结果&#xff0c;网站上也许还有报告 Bug&#xff08;Bug-reporting&#xff09;的流程或链接&#xff0c;如果是这样&#xff0c;连过去看看。</p> 
+                        <p>向陌生的人或论坛发送邮件最可能是风险最大的事情。举例来说&#xff0c;别假设一个提供丰富内容的网页的作者会想充当你的免费顾问。不要对你的问题是否会受到欢迎做太乐观的估计 -- 如果你不确定&#xff0c;那就向别处发送&#xff0c;或者压根别发。</p> 
+                        <p>在选择论坛、新闻群组或邮件列表时&#xff0c;别太相信名字&#xff0c;先看看 FAQ 或者许可书以弄清楚你的问题是否切题。发文前先翻翻已有的话题&#xff0c;这样可以让你感受一下那里的文化。事实上&#xff0c;事先在新闻组或邮件列表的历史记录中搜索与你问题相关的关键词是个极好的主意&#xff0c;也许这样就找到答案了。即使没有&#xff0c;也能帮助你归纳出更好的问题。</p> 
+                        <p>别像机关枪似的一次&#34;扫射&#34;所有的帮助渠道&#xff0c;这就像大喊大叫一样会使人不快。要一个一个地来。</p> 
+                        <p>搞清楚你的主题&#xff01;最典型的错误之一是在某种致力于跨平台可移植的语言、套件或工具的论坛中提关于 Unix 或 Windows 操作系统程序界面的问题。如果你不明白为什么这是大错&#xff0c;最好在搞清楚这之间差异之前什么也别问。</p> 
+                        <p>一般来说&#xff0c;在仔细挑选的公共论坛中提问&#xff0c;会比在私有论坛中提同样的问题更容易得到有用的回答。有几个理由可以支持这点&#xff0c;一是看潜在的回复者有多少&#xff0c;二是看观众有多少。黑客较愿意回答那些能帮助到许多人的问题。</p> 
+                        <p>可以理解的是&#xff0c;老练的黑客和一些热门软件的作者正在接受过多的错发信息。就像那根最后压垮骆驼背的稻草一样&#xff0c;你的加入也有可能使情况走向极端 -- 已经好几次了&#xff0c;一些热门软件的作者从自己软件的支持中抽身出来&#xff0c;因为伴随而来涌入其私人邮箱的无用邮件变得无法忍受。</p> 
+                        <h3 id="section3-2">Stack Overflow</h3> 
+                        <p>搜索&#xff0c;<strong><em>然后</em></strong> 在 Stack Exchange 问。</p> 
+                        <p>近年来&#xff0c;Stack Exchange community 社区已经成为回答技术及其他问题的主要渠道&#xff0c;尤其是那些开放源码的项目。</p> 
+                        <p>因为 Google 索引是即时的&#xff0c;在看 Stack Exchange 之前先在 Google 搜索。有很高的机率某人已经问了一个类似的问题&#xff0c;而且 Stack Exchange 网站们往往会是搜索结果中最前面几个。如果你在 Google 上没有找到任何答案&#xff0c;你再到特定相关主题的网站去找。用标签&#xff08;Tag&#xff09;搜索能让你更缩小你的搜索结果。</p> 
+                        <p>Stack Exchange 已经成长到<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fstackexchange.com%2Fsites">超过一百个网站 </a>&#xff0c;以下是最常用的几个站&#xff1a;</p> 
+                        <ul><li>Super User 是问一些通用的电脑问题&#xff0c;如果你的问题跟代码或是写程序无关&#xff0c;只是一些网络连线之类的&#xff0c;请到这里。</li><li>Stack Overflow 是问写程序有关的问题。</li><li>Server Fault 是问服务器和网管相关的问题。</li></ul>
+                        <h3 id="section3-3">网站和 IRC 论坛</h3> 
+                        <p>本地的使用者群组&#xff08;user group&#xff09;&#xff0c;或者你所用的 Linux 发行版本也许正在宣传他们的网页论坛或 IRC 频道&#xff0c;并提供新手帮助&#xff08;在一些非英语国家&#xff0c;新手论坛很可能还是邮件列表&#xff09;&#xff0c; 这些地方是开始提问的好首选&#xff0c;特别是当你觉得遇到的也许只是相对简单或者很普通的问题时。经过宣传的 IRC 频道是公开欢迎提问的地方&#xff0c;通常可以即时得到回应。</p> 
+                        <p>事实上&#xff0c;如果程序出的问题只发生在特定 Linux 发行版提供的版本&#xff08;这很常见&#xff09;&#xff0c;最好先去该发行版的论坛或邮件列表中提问&#xff0c;再到程序本身的论坛或邮件列表提问。&#xff08;否则&#xff09;该项目的黑客可能仅仅回复 &#34;用<strong><em>我们的</em></strong>版本&#34;。</p> 
+                        <p>在任何论坛发文以前&#xff0c;先确认一下有没有搜索功能。如果有&#xff0c;就试着搜索一下问题的几个关键词&#xff0c;也许这会有帮助。如果在此之前你已做过通用的网页搜索&#xff08;你也该这样做&#xff09;&#xff0c;还是再搜索一下论坛&#xff0c;搜索引擎有可能没来得及索引此论坛的全部内容。</p> 
+                        <p>通过论坛或 IRC 频道来提供使用者支持服务有增长的趋势&#xff0c;电子邮件则大多为项目开发者间的交流而保留。所以最好先在论坛或 IRC 中寻求与该项目相关的协助。</p> 
+                        <h3 id="section3-4">第二步&#xff0c;使用项目邮件列表</h3> 
+                        <p>当某个项目提供开发者邮件列表时&#xff0c;要向列表而不是其中的个别成员提问&#xff0c;即使你确信他能最好地回答你的问题。查一查项目的文件和首页&#xff0c;找到项目的邮件列表并使用它。有几个很好的理由支持我们采用这种办法&#xff1a;</p> 
+                        <ul><li>任何好到需要向个别开发者提出的问题&#xff0c;也将对整个项目群组有益。反之&#xff0c;如果你认为自己的问题对整个项目群组来说太愚蠢&#xff0c;也不能成为骚扰个别开发者的理由。</li><li>向列表提问可以分散开发者的负担&#xff0c;个别开发者&#xff08;尤其是项目领导人&#xff09;也许太忙以至于没法回答你的问题。</li><li>大多数邮件列表都会被存档&#xff0c;那些被存档的内容将被搜索引擎索引。如果你向列表提问并得到解答&#xff0c;将来其它人可以通过网页搜索找到你的问题和答案&#xff0c;也就不用再次发问了。</li><li>如果某些问题经常被问到&#xff0c;开发者可以利用此信息来改进说明文件或软件本身&#xff0c;以使其更清楚。如果只是私下提问&#xff0c;就没有人能看到最常见问题的完整场景。</li></ul>
+                        <p>如果一个项目既有&#34;使用者&#34; 也有&#34;开发者&#34;&#xff08;或&#34;黑客&#34;&#xff09;邮件列表或论坛&#xff0c;而你又不会动到那些源代码&#xff0c;那么就向&#34;使用者&#34;列表或论坛提问。不要假设自己会在开发者列表中受到欢迎&#xff0c;那些人多半会将你的提问视为干扰他们开发的噪音。</p> 
+                        <p>然而&#xff0c;如果你<strong><em>确信</em></strong>你的问题很特别&#xff0c;而且在&#34;使用者&#34; 列表或论坛中几天都没有回复&#xff0c;可以试试前往&#34;开发者&#34;列表或论坛发问。建议你在张贴前最好先暗地里观察几天以了解那里的行事方式&#xff08;事实上这是参与任何私有或半私有列表的好主意&#xff09;</p> 
+                        <p>如果你找不到一个项目的邮件列表&#xff0c;而只能查到项目维护者的电子邮件地址&#xff0c;尽管向他发信。即使是在这种情况下&#xff0c;也别假设&#xff08;项目&#xff09;邮件列表不存在。在你的电子邮件中&#xff0c;请陈述你已经试过但没有找到合适的邮件列表&#xff0c;也提及你不反对将自己的邮件转发给他人&#xff08;许多人认为&#xff0c;即使没什么秘密&#xff0c;私人电子邮件也不应该被公开。通过允许将你的电子邮件转发他人&#xff0c;你给了相应人员处置你邮件的选择&#xff09;。</p> 
+                        <h3 id="section3-5">使用有意义且描述明确的标题</h3> 
+                        <p>在邮件列表、新闻群组或论坛中&#xff0c;大约 50 字以内的标题是抓住资深专家注意力的好机会。别用喋喋不休的<code>帮帮忙</code>、<code>跪求</code>、<code>急</code>&#xff08;更别说<code>救命啊&#xff01;&#xff01;&#xff01;&#xff01;</code>这样让人反感的话&#xff0c;用这种标题会被条件反射式地忽略&#xff09;来浪费这个机会。不要妄想用你的痛苦程度来打动我们&#xff0c;而是在这点空间中使用极简单扼要的描述方式来提出问题。</p> 
+                        <p>一个好标题范例是<code>目标 -- 差异</code>式的描述&#xff0c;许多技术支持组织就是这样做的。在<code>目标</code>部分指出是哪一个或哪一组东西有问题&#xff0c;在<code>差异</code>部分则描述与期望的行为不一致的地方。</p> 
+                        <blockquote> 
+                         <p>蠢问题&#xff1a;救命啊&#xff01;我的笔电不能正常显示了&#xff01;</p> 
+                        </blockquote> 
+                        <blockquote> 
+                         <p>聪明问题&#xff1a;X.org 6.8.1 的鼠标游标会变形&#xff0c;某牌显卡 MV1005 芯片组。</p> 
+                        </blockquote> 
+                        <blockquote> 
+                         <p>更聪明问题&#xff1a;X.org 6.8.1 的鼠标游标&#xff0c;在某牌显卡 MV1005 芯片组环境下 - 会变形。</p> 
+                        </blockquote> 
+                        <p>编写<code>目标 -- 差异</code> 式描述的过程有助于你组织对问题的细緻思考。是什么被影响了&#xff1f; 仅仅是鼠标游标或者还有其它图形&#xff1f;只在 X.org 的 X 版中出现&#xff1f;或只是出现在 6.8.1 版中&#xff1f; 是针对某牌显卡芯片组&#xff1f;或者只是其中的 MV1005 型号&#xff1f; 一个黑客只需瞄一眼就能够立即明白你的环境<strong><em>和</em></strong>你遇到的问题。</p> 
+                        <p>总而言之&#xff0c;请想像一下你正在一个只显示标题的存档讨论串&#xff08;Thread&#xff09;索引中查寻。让你的标题更好地反映问题&#xff0c;可使下一个搜索类似问题的人能够关注这个讨论串&#xff0c;而不用再次提问相同的问题。</p> 
+                        <p>如果你想在回复中提出问题&#xff0c;记得要修改内容标题&#xff0c;以表明你是在问一个问题&#xff0c; 一个看起来像 <code>Re: 测试</code> 或者 <code>Re: 新 bug</code> 的标题很难引起足够重视。另外&#xff0c;在不影响连贯性之下&#xff0c;适当引用并删减前文的内容&#xff0c;能给新来的读者留下线索。</p> 
+                        <p>对于讨论串&#xff0c;不要直接点击回复来开始一个全新的讨论串&#xff0c;这将限制你的观众。因为有些邮件阅读程序&#xff0c;比如 mutt &#xff0c;允许使用者按讨论串排序并通过折叠讨论串来隐藏消息&#xff0c;这样做的人永远看不到你发的消息。</p> 
+                        <p>仅仅改变标题还不够。mutt 和其它一些邮件阅读程序还会检查邮件标题以外的其它信息&#xff0c;以便为其指定讨论串。所以宁可发一个全新的邮件。</p> 
+                        <p>在网页论坛上&#xff0c;好的提问方式稍有不同&#xff0c;因为讨论串与特定的信息紧密结合&#xff0c;并且通常在讨论串外就看不到里面的内容&#xff0c;故通过回复提问&#xff0c;而非改变标题是可接受的。不是所有论坛都允许在回复中出现分离的标题&#xff0c;而且这样做了基本上没有人会去看。不过&#xff0c;通过回复提问&#xff0c;这本身就是暧昧的做法&#xff0c;因为它们只会被正在查看该标题的人读到。所以&#xff0c;除非你<strong><em>只想</em></strong>在该讨论串当前活跃的人群中提问&#xff0c;不然还是另起炉灶比较好。</p> 
+                        <h3 id="section3-6">使问题容易回复</h3> 
+                        <p>以<code>请将你的回复寄到……</code>来结束你的问题多半会使你得不到回答。如果你觉得花几秒钟在邮件客户端设置一下回复地址都麻烦&#xff0c;我们也觉得花几秒钟思考你的问题更麻烦。如果你的邮件程序不支持这样做&#xff0c;<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Flinuxmafia.com%2Ffaq%2FMail%2Fmuas.html">换个好点的 </a>&#xff1b;如果是操作系统不支持这种邮件程序&#xff0c;也换个好点的。</p> 
+                        <p>在论坛&#xff0c;要求通过电子邮件回复是非常无礼的&#xff0c;除非你相信回复的信息可能比较敏感&#xff08;而且有人会为了某些未知的原因&#xff0c;只让你而不是整个论坛知道答案&#xff09;。如果你只是想在有人回复讨论串时得到电子邮件提醒&#xff0c;可以要求网页论坛发送给你。几乎所有论坛都支持诸如<code>追踪此讨论串</code>、<code>有回复时发送邮件提醒</code>等功能。</p> 
+                        <h3 id="section3-7">用清晰、正确、精准并语法正确的语句</h3> 
+                        <p>我们从经验中发现&#xff0c;粗心的提问者通常也会粗心的写程序与思考&#xff08;我敢打包票&#xff09;。回答粗心大意者的问题很不值得&#xff0c;我们宁愿把时间耗在别处。</p> 
+                        <p>正确的拼字、标点符号和大小写是很重要的。一般来说&#xff0c;如果你觉得这样做很麻烦&#xff0c;不想在乎这些&#xff0c;那我们也觉得麻烦&#xff0c;不想在乎你的提问。花点额外的精力斟酌一下字句&#xff0c;用不着太僵硬与正式 -- 事实上&#xff0c;黑客文化很看重能准确地使用非正式、俚语和幽默的语句。但它<strong><em>必须很</em></strong>准确&#xff0c;而且有迹象表明你是在思考和关注问题。</p> 
+                        <p>正确地拼写、使用标点和大小写&#xff0c;不要将<code>its</code>混淆为<code>it&#39;s</code>&#xff0c;<code>loose</code>搞成<code>lose</code>或者将<code>discrete</code>弄成<code>discreet</code>。不要<strong>全部用大写</strong>&#xff0c;这会被视为无礼的大声嚷嚷&#xff08;全部小写也好不到哪去&#xff0c;因为不易阅读。<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAlan_Cox">Alan Cox</a> 也许可以这样做&#xff0c;但你不行。&#xff09;</p> 
+                        <p>更白话的说&#xff0c;如果你写得像是个半文盲[译注&#xff1a;<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fzh.wikipedia.org%2Fzh-tw%2F%25E5%25B0%258F%25E7%2599%25BD">小白 </a>]&#xff09;&#xff0c;那多半得不到理睬。也不要使用即时通讯中的简写或<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fzh.wikipedia.org%2Fzh-tw%2F%25E7%2581%25AB%25E6%2598%259F%25E6%2596%2587">火星文 </a>&#xff0c;如将<code>的</code>简化为<code>ㄉ</code>会使你看起来像一个为了少打几个键而省字的小白。更糟的是&#xff0c;如果像个小孩似地鬼画符那绝对是在找死&#xff0c;可以肯定没人会理你&#xff08;或者最多是给你一大堆指责与挖苦&#xff09;。</p> 
+                        <p>如果在使用非母语的论坛提问&#xff0c;你可以犯点拼写和语法上的小错&#xff0c;但决不能在思考上马虎&#xff08;没错&#xff0c;我们通常能弄清两者的分别&#xff09;。同时&#xff0c;除非你知道回复者使用的语言&#xff0c;否则请使用英语书写。繁忙的黑客一般会直接删除用他们看不懂语言写的消息。在网络上英语是通用语言&#xff0c;用英语书写可以将你的问题在尚未被阅读就被直接删除的可能性降到最低。</p> 
+                        <p>如果英文是你的外语&#xff08;Second language&#xff09;&#xff0c;提示潜在回复者你有潜在的语言困难是很好的&#xff1a;<br /> [译注&#xff1a;以下附上原文以供使用 ]</p> 
+                        <blockquote> 
+                         <p>English is not my native language; please excuse typing errors.</p> 
+                        </blockquote> 
+                        <ul><li>英文不是我的母语&#xff0c;请原谅我的错字或语法</li></ul>
+                        <blockquote> 
+                         <p>If you speak $LANGUAGE, please email/PM me;<br /> I may need assistance translating my question.</p> 
+                        </blockquote> 
+                        <ul><li>如果你说<strong>某语言</strong>&#xff0c;请寄信/私讯给我&#xff1b;我需要有人协助我翻译我的问题</li></ul>
+                        <blockquote> 
+                         <p>I am familiar with the technical terms,<br /> but some slang expressions and idioms are difficult for me.</p> 
+                        </blockquote> 
+                        <ul><li>我对技术名词很熟悉&#xff0c;但对于俗语或是特别用法比较不甚了解。</li></ul>
+                        <blockquote> 
+                         <p>I&#39;ve posted my question in $LANGUAGE and English.<br /> I&#39;ll be glad to translate responses, if you only use one or the other.</p> 
+                        </blockquote> 
+                        <ul><li>我把我的问题用<strong>某语言</strong>和英文写出来&#xff0c;如果你只用一种语言回答&#xff0c;我会乐意将其翻译成另一种。</li></ul>
+                        <h3 id="section3-8">使用易于读取且标准的文件格式发送问题</h3> 
+                        <p>如果你人为地将问题搞得难以阅读&#xff0c;它多半会被忽略&#xff0c;人们更愿读易懂的问题&#xff0c;所以&#xff1a;</p> 
+                        <ul><li>使用纯文字而不是 HTML (<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Farchive.birdhouse.org%2Fetc%2Fevilmail.html">关闭 HTML</a> 并不难&#xff09;</li><li>使用 MIME 附件通常是可以的&#xff0c;前提是真正有内容&#xff08;譬如附带的源代码或 patch&#xff09;&#xff0c;而不仅仅是邮件程序生成的模板&#xff08;譬如只是信件内容的拷贝&#xff09;。</li><li>不要发送一段文字只是单行句子但多次断行的邮件&#xff08;这使得回复部分内容非常困难&#xff09;。设想你的读者是在 80 个字符宽的终端机上阅读邮件&#xff0c;最好设置你的断行点小于 80 字。</li><li>但是&#xff0c;也<strong><em>不要</em></strong>用任何固定断行资料&#xff08;譬如日志档案拷贝或会话记录&#xff09;。档案应该原样包含&#xff0c;让回复者有信心他们看到的是和你看到的一样的东西。</li><li>在英语论坛中&#xff0c;不要使用<code>Quoted-Printable</code> MIME 编码发送消息。这种编码对于张贴非 ASCII 语言可能是必须的&#xff0c;但很多邮件程序并不支持这种编码。当它们分断时&#xff0c;那些文本中四处散布的<code>&#61;20</code>符号既难看也分散注意力&#xff0c;甚至有可能破坏内容的语意。</li><li>绝对&#xff0c;<strong><em>永远</em></strong>不要指望黑客们阅读使用封闭格式编写的文档&#xff0c;像是微软公司的 Word 或 Excel 文件等。大多数黑客对此的反应就像有人将还在冒热气的猪粪倒在你门口阶梯上时你的反应一样。即便他们能够处理&#xff0c;他们也很厌恶这么做。</li><li>如果你从使用 Windows 的电脑发送电子邮件&#xff0c;关闭微软愚蠢的<code>智能引号</code>功能 &#xff08;从[选项 ] &gt; [校订 ] &gt; [自动校正选项 ], 按掉<code>智能引号</code>单选框&#xff09;&#xff0c;以免在你的邮件中到处散布垃圾字符。</li><li>在论坛&#xff0c;勿滥用<code>表情符号</code>和<code>HTML</code>功能&#xff08;当它们提供时&#xff09;。一两个表情符号通常没有问题&#xff0c;但花哨的彩色文本倾向于使人认为你是个无能之辈。过滥地使用表情符号、色彩和字体会使你看来像个傻笑的小姑娘。这通常不是个好主意&#xff0c;除非你只是对 sex 而不是有用的回复更有兴趣。</li></ul>
+                        <p>如果你使用图形用户界面的邮件程序&#xff08;如微软公司的 Outlook 或者其它类似的&#xff09;&#xff0c;注意它们的默认设置不一定满足这些要求。大多数这类程序有基于选单的<code>查看源代码</code>命令&#xff0c;用它来检查发送文件夹中的消息&#xff0c;以确保发送的是没有多余杂质的纯文本文件。</p> 
+                        <h3 id="section3-9">精确的描述问题并言之有物</h3> 
+                        <ul><li>仔细、清楚地描述你的问题或 Bug 的症状。</li><li>描述问题发生的环境&#xff08;机器配置、操作系统、应用程序、以及相关的信息&#xff09;&#xff0c;提供经销商的发行版和版本号&#xff08;如&#xff1a;<code>Fedora Core 4</code>、<code>Slackware 9.1</code>等&#xff09;。</li><li>描述在提问前你是怎样去研究和理解这个问题的。</li><li>描述在提问前为确定问题而采取的诊断步骤。</li><li>描述最近做过什么可能相关的硬件或软件变更。</li><li>尽可能的提供一个可以<code>重现这个问题的既定环境</code>的方法</li></ul>
+                        <p>尽量去揣测一个黑客会怎样反问你&#xff0c;在他提问的时候预先给他答案。</p> 
+                        <p>以上几点中&#xff0c;当你报告的是你认为可能在代码中的问题时&#xff0c;给黑客一个可以重现你的问题的环境尤其重要。当你这么做时&#xff0c;你得到有效的回答的机会和速度都会大大的提升。</p> 
+                        <p><a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fwww.chiark.greenend.org.uk%2F~sgtatham%2F">Simon Tatham</a> 写过一篇名为《<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fwww.chiark.greenend.org.uk%2F~sgtatham%2Fbugs-tw.html">如何有效的报告 Bug</a>》的出色文章。强力推荐你也读一读。</p> 
+                        <h3 id="section3-10">话不在多而在精</h3> 
+                        <p>你需要提供精确有内容的信息。这并不是要求你简单的把成堆的出错代码或者资料完全转录到你的提问中。如果你有庞大而复杂的测试样例能重现程序挂掉的情境&#xff0c;尽量将它剪裁得越小越好。</p> 
+                        <p>这样做的用处至少有三点。<br /> 第一&#xff0c;表现出你为简化问题付出了努力&#xff0c;这可以使你得到回答的机会增加&#xff1b;<br /> 第二&#xff0c;简化问题使你更有可能得到<strong><em>有用</em></strong>的答案&#xff1b;<br /> 第三&#xff0c;在精炼你的 bug 报告的过程中&#xff0c;你很可能就自己找到了解决方法或权宜之计。</p> 
+                        <h3 id="section3-11">别动辄声称找到 Bug</h3> 
+                        <p>当你在使用软件中遇到问题&#xff0c;除非你非常、<strong><em>非常</em></strong>的有根据&#xff0c;不要动辄声称找到了 Bug。提示&#xff1a;除非你能提供解决问题的源代码补丁&#xff0c;或者对前一版本的回归测试表现出不正确的行为&#xff0c;否则你都多半不够完全确信。这同样适用在网页和文件&#xff0c;如果你&#xff08;声称&#xff09;发现了文件的<code>Bug</code>&#xff0c;你应该能提供相应位置的修正或替代文件。</p> 
+                        <p>请记得&#xff0c;还有许多其它使用者没遇到你发现的问题&#xff0c;否则你在阅读文件或搜索网页时就应该发现了&#xff08;你在抱怨前<a href="#%E5%9C%A8%E6%8F%90%E9%97%AE%E4%B9%8B%E5%89%8D">已经做了这些&#xff0c;是吧 </a>&#xff1f;&#xff09;。这也意味着很有可能是你弄错了而不是软件本身有问题。</p> 
+                        <p>编写软件的人总是非常辛苦地使它尽可能完美。如果你声称找到了 Bug&#xff0c;也就是在质疑他们的能力&#xff0c;即使你是对的&#xff0c;也有可能会冒犯到其中某部分人。这尤其严重当你在标题中嚷嚷着有<code>Bug</code>。</p> 
+                        <p>提问时&#xff0c;即使你私下非常确信已经发现一个真正的 Bug&#xff0c;最好写得像是<strong><em>你</em></strong>做错了什么。如果真的有 Bug&#xff0c;你会在回复中看到这点。这样做的话&#xff0c;如果真有 Bug&#xff0c;维护者就会向你道歉&#xff0c;这总比你惹恼别人然后欠别人一个道歉要好一点。</p> 
+                        <h3 id="section3-12">可以低声下气&#xff0c;但还是要先做功课</h3> 
+                        <p>有些人明白他们不该粗鲁或傲慢的提问并要求得到答复&#xff0c;但他们选择另一个极端 -- 低声下气&#xff1a;<code>我知道我只是个可悲的新手&#xff0c;一个撸瑟&#xff0c;但...</code>。这既使人困扰&#xff0c;也没有用&#xff0c;尤其是伴随着与实际问题含糊不清的描述时更令人反感。</p> 
+                        <p>别用原始灵长类动物的把戏来浪费你我的时间。取而代之的是&#xff0c;尽可能清楚地描述背景条件和你的问题情况。这比低声下气更好地定位了你的位置。</p> 
+                        <p>有时网页论坛会设有专为新手提问的版面&#xff0c;如果你真的认为遇到了初学者的问题&#xff0c;到那去就是了&#xff0c;但一样别那么低声下气。</p> 
+                        <h3 id="section3-13">描述问题症状而非猜测</h3> 
+                        <p>告诉黑客们你认为问题是怎样造成的并没什么帮助。&#xff08;如果你的推断如此有效&#xff0c;还用向别人求助吗&#xff1f;&#xff09;&#xff0c;因此要确信你原原本本告诉了他们问题的症状&#xff0c;而不是你的解释和理论&#xff1b;让黑客们来推测和诊断。如果你认为陈述自己的猜测很重要&#xff0c;清楚地说明这只是你的猜测&#xff0c;并描述为什么它们不起作用。</p> 
+                        <p><strong><em>蠢问题</em></strong></p> 
+                        <blockquote> 
+                         <p>我在编译内核时接连遇到 SIG11 错误&#xff0c;<br /> 我怀疑某条飞线搭在主板的走线上了&#xff0c;这种情况应该怎样检查最好&#xff1f;</p> 
+                        </blockquote> 
+                        <p><strong><em>聪明问题</em></strong></p> 
+                        <blockquote> 
+                         <p>我的组装电脑是 FIC-PA2007 主机板搭载 AMD K6/233 CPU&#xff08;威盛 Apollo VP2 芯片组&#xff09;&#xff0c;<br /> 256MB Corsair PC133 SDRAM 内存&#xff0c;在编译内核时&#xff0c;从开机 20 分钟以后就频频产生 SIG11 错误&#xff0c;<br /> 但是在头 20 分钟内从没发生过相同的问题。重新启动也没有用&#xff0c;但是关机一晚上就又能工作 20 分钟。<br /> 所有内存都换过了&#xff0c;没有效果。相关部分的标准编译记录如下…。</p> 
+                        </blockquote> 
+                        <p>由于以上这点似乎让许多人觉得难以配合&#xff0c;这里有句话可以提醒你&#xff1a;<code>所有的诊断专家都来自密苏里州。</code> 美国国务院的官方座右铭则是&#xff1a;<code>让我看看</code>&#xff08;出自国会议员 Willard D. Vandiver 在 1899 年时的讲话&#xff1a;<code>我来自一个出产玉米&#xff0c;棉花&#xff0c;牛蒡和民主党人的国家&#xff0c;滔滔雄辩既不能说服我&#xff0c;也不会让我满意。我来自密苏里州&#xff0c;你必须让我看看。</code>&#xff09; 针对诊断者而言&#xff0c;这并不是一种怀疑&#xff0c;而只是一种真实而有用的需求&#xff0c;以便让他们看到的是与你看到的原始证据尽可能一致的东西&#xff0c;而不是你的猜测与归纳的结论。所以&#xff0c;大方的展示给我们看吧&#xff01;</p> 
+                        <h3 id="section3-14">按发生时间先后列出问题症状</h3> 
+                        <p>问题发生前的一系列操作&#xff0c;往往就是对找出问题最有帮助的线索。因此&#xff0c;你的说明里应该包含你的操作步骤&#xff0c;以及机器和软件的反应&#xff0c;直到问题发生。在命令行处理的情况下&#xff0c;提供一段操作记录&#xff08;例如运行脚本工具所生成的&#xff09;&#xff0c;并引用相关的若干行&#xff08;如 20 行&#xff09;记录会非常有帮助。</p> 
+                        <p>如果挂掉的程序有诊断选项&#xff08;如 -v 的详述开关&#xff09;&#xff0c;试着选择这些能在记录中增加调试信息的选项。记住&#xff0c;<code>多</code>不等于<code>好</code>。试着选取适当的调试级别以便提供有用的信息而不是让读者淹没在垃圾中。</p> 
+                        <p>如果你的说明很长&#xff08;如超过四个段落&#xff09;&#xff0c;在开头简述问题&#xff0c;接下来再按时间顺序详述会有所帮助。这样黑客们在读你的记录时就知道该注意哪些内容了。</p> 
+                        <h3 id="section3-15">描述目标而不是过程</h3> 
+                        <p>如果你想弄清楚如何做某事&#xff08;而不是报告一个 Bug&#xff09;&#xff0c;在开头就描述你的目标&#xff0c;然后才陈述重现你所卡住的特定步骤。</p> 
+                        <p>经常寻求技术帮助的人在心中有个更高层次的目标&#xff0c;而他们在自以为能达到目标的特定道路上被卡住了&#xff0c;然后跑来问该怎么走&#xff0c;但没有意识到这条路本身就有问题。结果要费很大的劲才能搞定。</p> 
+                        <p><strong>蠢问题</strong></p> 
+                        <blockquote> 
+                         <p>我怎样才能从某绘图程序的颜色选择器中取得十六进制的的 RGB 值&#xff1f;</p> 
+                        </blockquote> 
+                        <p><strong>聪明问题</strong></p> 
+                        <blockquote> 
+                         <p>我正试着用替换一幅图片的色码成自己选定的色码&#xff0c;我现在知道的唯一方法是编辑每个色码区块&#xff0c;<br /> 但却无法从某绘图程序的颜色选择器取得十六进制的的 RGB 值。</p> 
+                        </blockquote> 
+                        <p>第二种提问法比较聪明&#xff0c;你可能得到像是<code>建议采用另一个更合适的工具</code>的回复。</p> 
+                        <h3 id="section3-16">别要求使用私人电邮回复</h3> 
+                        <p>黑客们认为问题的解决过程应该公开、透明&#xff0c;此过程中如果更有经验的人注意到不完整或者不当之处&#xff0c;最初的回复才能够、也应该被纠正。同时&#xff0c;作为提供帮助者也能因为能力和学识被其它同行看到而得到某种奖励。</p> 
+                        <p>当你要求私下回复时&#xff0c;这个过程和奖励都被中止。别这样做&#xff0c;让<strong><em>回复者</em></strong>来决定是否私下回答 -- 如果他真这么做了&#xff0c;通常是因为他认为问题编写太差或者太肤浅&#xff0c;以至于对其它人没有兴趣。</p> 
+                        <p>这条规则存在一条有限的例外&#xff0c;如果你确信提问可能会引来大量雷同的回复时&#xff0c;那么这个神奇的提问句会是<code>向我发电邮&#xff0c;我将为论坛归纳这些回复</code>。试着将邮件列表或新闻群组从洪水般的雷同回复中解救出来是非常有礼貌的 -- 但你必须信守诺言。</p> 
+                        <h3 id="section3-17">清楚明确的表达你的问题以及需求</h3> 
+                        <p>漫无边际的提问近乎无休无止的时间黑洞。最有可能给你有用答案的人通常也正是最忙的人&#xff08;他们忙是因为要亲自完成大部分工作&#xff09;。这样的人对无节制的时间黑洞相当厌恶&#xff0c;所以他们也倾向于厌恶那些漫无边际的提问。</p> 
+                        <p>如果你明确表述需要回答者做什么&#xff08;如提供指点、发送一段代码、检查你的补丁、或是其他等等&#xff09;&#xff0c;就最有可能得到有用的答案。因为这会定出一个时间和精力的上限&#xff0c;便于回答者能集中精力来帮你。这么做很棒。</p> 
+                        <p>要理解专家们所处的世界&#xff0c;请把专业技能想像为充裕的资源&#xff0c;而回复的时间则是稀缺的资源。你要求他们奉献的时间越少&#xff0c;你越有可能从真正专业而且很忙的专家那里得到解答。</p> 
+                        <p>所以&#xff0c;界定一下你的问题&#xff0c;使专家花在辨识你的问题和回答所需要付出的时间减到最少&#xff0c;这技巧对你有用答案相当有帮助 -- 但这技巧通常和简化问题有所区别。因此&#xff0c;问<code>我想更好的理解 X&#xff0c;可否指点一下哪有好一点说明&#xff1f;</code>通常比问<code>你能解释一下 X 吗&#xff1f;</code>更好。如果你的代码不能运作&#xff0c;通常请别人看看哪里有问题&#xff0c;比要求别人替你改正要明智得多。</p> 
+                        <h3 id="section3-18">询问有关代码的问题时</h3> 
+                        <p>别要求他人帮你有问题的代码调试而不提示一下应该从何入手。张贴几百行的代码&#xff0c;然后说一声&#xff1a;<code>它不会动</code>会让你完全被忽略。只贴几十行代码&#xff0c;然后说一句&#xff1a;<code>在第七行以后&#xff0c;我期待它显示 &lt;x&gt;&#xff0c;但实际出现的是 &lt;y&gt;</code>比较有可能让你得到回应。</p> 
+                        <p>最有效描述程序问题的方法是提供最精简的 Bug 展示测试示例&#xff08;bug-demonstrating test case&#xff09;。什么是最精简的测试示例? 那是问题的缩影&#xff1b;一小个程序片段能<strong>刚好</strong>展示出程序的异常行为&#xff0c;而不包含其他令人分散注意力的内容。怎么制作最精简的测试示例&#xff1f;如果你知道哪一行或哪一段代码会造成异常的行为&#xff0c;复制下来并加入足够重现这个状况的代码&#xff08;例如&#xff0c;足以让这段代码能被编译/直译/被应用程序处理&#xff09;。如果你无法将问题缩减到一个特定区块&#xff0c;就复制一份代码并移除不影响产生问题行为的部分。总之&#xff0c;测试示例越小越好&#xff08;查看<a href="#%E8%AF%9D%E4%B8%8D%E5%9C%A8%E5%A4%9A%E8%80%8C%E5%9C%A8%E7%B2%BE">话不在多而在精 </a> 一节&#xff09;。</p> 
+                        <p>一般而言&#xff0c;要得到一段相当精简的测试示例并不太容易&#xff0c;但永远先尝试这样做的是种好习惯。这种方式可以帮助你了解如何自行解决这个问题 —- 而且即使你的尝试不成功&#xff0c;黑客们也会看到你在尝试取得答案的过程中付出了努力&#xff0c;这可以让他们更愿意与你合作。</p> 
+                        <p>如果你只是想让别人帮忙审查&#xff08;Review&#xff09;一下代码&#xff0c;在信的开头就要说出来&#xff0c;并且一定要提到你认为哪一部分特别需要关注以及为什么。</p> 
+                        <h3 id="section3-19">别把自己家庭作业的问题贴上来</h3> 
+                        <p>黑客们很擅长分辨哪些问题是家庭作业式的问题&#xff1b;因为我们中的大多数都曾自己解决这类问题。同样&#xff0c;这些问题得由<strong><em>你</em></strong>来搞定&#xff0c;你会从中学到东西。你可以要求给点提示&#xff0c;但别要求得到完整的解决方案。</p> 
+                        <p>如果你怀疑自己碰到了一个家庭作业式的问题&#xff0c;但仍然无法解决&#xff0c;试试在使用者群组&#xff0c;论坛或&#xff08;最后一招&#xff09;在项目的<strong>使用者</strong>邮件列表或论坛中提问。尽管黑客们<strong><em>会</em></strong>看出来&#xff0c;但一些有经验的使用者也许仍会给你一些提示。</p> 
+                        <h3 id="section3-20">去掉无意义的提问句</h3> 
+                        <p>避免用无意义的话结束提问&#xff0c;例如<code>有人能帮我吗&#xff1f;</code>或者<code>这有答案吗&#xff1f;</code>。</p> 
+                        <p>首先&#xff1a;如果你对问题的描述不是很好&#xff0c;这样问更是画蛇添足。</p> 
+                        <p>其次&#xff1a;由于这样问是画蛇添足&#xff0c;黑客们会很厌烦你 -- 而且通常会用逻辑上正确&#xff0c;但毫无意义的回答来表示他们的蔑视&#xff0c; 例如&#xff1a;<code>没错&#xff0c;有人能帮你</code>或者<code>不&#xff0c;没答案</code>。</p> 
+                        <p>一般来说&#xff0c;避免用 <code>是或否</code>、<code>对或错</code>、<code>有或没有</code>类型的问句&#xff0c;除非你想得到<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fhomepage.ntlworld.com.%2Fjonathan.deboynepollard%2FFGA%2Fquestions-with-yes-or-no-answers.html">是或否类型的回答 </a>。</p> 
+                        <h3 id="section3-21">即使你很急也不要在标题写<code>紧急</code></h3> 
+                        <p>这是你的问题&#xff0c;不是我们的。宣称<code>紧急</code>极有可能事与愿违&#xff1a;大多数黑客会直接删除无礼和自私地企图即时引起关注的问题。更严重的是&#xff0c;<code>紧急</code>这个字&#xff08;或是其他企图引起关注的标题&#xff09;通常会被垃圾信过滤器过滤掉 -- 你希望能看到你问题的人可能永远也看不到。</p> 
+                        <p>有半个例外的情况是&#xff0c;如果你是在一些很高调&#xff0c;会使黑客们兴奋的地方&#xff0c;也许值得这样去做。在这种情况下&#xff0c;如果你有时间压力&#xff0c;也很有礼貌地提到这点&#xff0c;人们也许会有兴趣回答快一点。</p> 
+                        <p>当然&#xff0c;这风险很大&#xff0c;因为黑客们兴奋的点多半与你的不同。譬如从 NASA 国际空间站&#xff08;International Space Station&#xff09;发这样的标题没有问题&#xff0c;但用自我感觉良好的慈善行为或政治原因发肯定不行。事实上&#xff0c;张贴诸如<code>紧急&#xff1a;帮我救救这个毛绒绒的小海豹&#xff01;</code>肯定让你被黑客忽略或惹恼他们&#xff0c;即使他们认为毛绒绒的小海豹很重要。</p> 
+                        <p>如果你觉得这点很不可思议&#xff0c;最好再把这份指南剩下的内容多读几遍&#xff0c;直到你弄懂了再发文。</p> 
+                        <h3 id="section3-22">礼多人不怪&#xff0c;而且有时还很有帮助</h3> 
+                        <p>彬彬有礼&#xff0c;多用<code>请</code>和<code>谢谢您的关注</code>&#xff0c;或<code>谢谢你的关照</code>。让大家都知道你对他们花时间免费提供帮助心存感激。</p> 
+                        <p>坦白说&#xff0c;这一点并没有比清晰、正确、精准并合法语法和避免使用专用格式重要&#xff08;也不能取而代之&#xff09;。黑客们一般宁可读有点唐突但技术上鲜明的 Bug 报告&#xff0c;而不是那种有礼但含糊的报告。&#xff08;如果这点让你不解&#xff0c;记住我们是按问题能教我们什么来评价问题的价值的&#xff09;</p> 
+                        <p>然而&#xff0c;如果你有一串的问题待解决&#xff0c;客气一点肯定会增加你得到有用回应的机会。</p> 
+                        <p>&#xff08;我们注意到&#xff0c;自从本指南发布后&#xff0c;从资深黑客那里得到的唯一严重缺陷反馈&#xff0c;就是对预先道谢这一条。一些黑客觉得<code>先谢了</code>意味着事后就不用再感谢任何人的暗示。我们的建议是要么先说<code>先谢了</code>&#xff0c;<strong><em>然后</em></strong>事后再对回复者表示感谢&#xff0c;或者换种方式表达感激&#xff0c;譬如用<code>谢谢你的关注</code>或<code>谢谢你的关照</code>。&#xff09;</p> 
+                        <h3 id="section3-23">问题解决后&#xff0c;加个简短的补充说明</h3> 
+                        <p>问题解决后&#xff0c;向所有帮助过你的人发个说明&#xff0c;让他们知道问题是怎样解决的&#xff0c;并再一次向他们表示感谢。如果问题在新闻组或者邮件列表中引起了广泛关注&#xff0c;应该在那里贴一个说明比较恰当。</p> 
+                        <p>最理想的方式是向最初提问的话题回复此消息&#xff0c;并在标题中包含<code>已修正</code>&#xff0c;<code>已解决</code>或其它同等含义的明显标记。在人来人往的邮件列表里&#xff0c;一个看见讨论串<code>问题 X</code>和<code>问题的 X - 已解决</code>的潜在回复者就明白不用再浪费时间了&#xff08;除非他个人觉得<code>问题 X</code>的有趣&#xff09;&#xff0c;因此可以利用此时间去解决其它问题。</p> 
+                        <p>补充说明不必很长或是很深入&#xff1b;简单的一句<code>你好&#xff0c;原来是网线出了问题&#xff01;谢谢大家 – Bill</code>比什么也不说要来的好。事实上&#xff0c;除非结论真的很有技术含量&#xff0c;否则简短可爱的小结比长篇大论更好。说明问题是怎样解决的&#xff0c;但大可不必将解决问题的过程复述一遍。</p> 
+                        <p>对于有深度的问题&#xff0c;张贴调试记录的摘要是有帮助的。描述问题的最终状态&#xff0c;说明是什么解决了问题&#xff0c;在此<strong><em>之后</em></strong>才指明可以避免的盲点。避免盲点的部分应放在正确的解决方案和其它总结材料之后&#xff0c;而不要将此信息搞成侦探推理小说。列出那些帮助过你的名字&#xff0c;会让你交到更多朋友。</p> 
+                        <p>除了有礼貌和有内涵以外&#xff0c;这种类型的补充也有助于他人在邮件列表/新闻群组/论坛中搜索到真正解决你问题的方案&#xff0c;让他们也从中受益。</p> 
+                        <p>至少&#xff0c;这种补充有助于让每位参与协助的人因问题的解决而从中得到满足感。如果你自己不是技术专家或者黑客&#xff0c;那就相信我们&#xff0c;这种感觉对于那些你向他们求助的大师或者专家而言&#xff0c;是非常重要的。问题悬而未决会让人灰心&#xff1b;黑客们渴望看到问题被解决。好人有好报&#xff0c;满足他们的渴望&#xff0c;你会在下次提问时尝到甜头。</p> 
+                        <p>思考一下怎样才能避免他人将来也遇到类似的问题&#xff0c;自问写一份文件或加个常见问题&#xff08;FAQ&#xff09;会不会有帮助。如果是的话就将它们发给维护者。</p> 
+                        <p>在黑客中&#xff0c;这种良好的后继行动实际上比传统的礼节更为重要&#xff0c;也是你如何透过善待他人而赢得声誉的方式&#xff0c;这是非常有价值的资产。</p> 
+                        <h2 id="section4">如何解读答案</h2> 
+                        <p>&lt;a id&#61;&#34;RTFM&#34;&gt;&lt;/a&gt;</p> 
+                        <h3 id="section4-1">RTFM 和 STFW&#xff1a;如何知道你已完全搞砸了</h3> 
+                        <p>有一个古老而神圣的传统&#xff1a;如果你收到<code>RTFM &#xff08;Read The Fucking Manual&#xff09;</code>的回应&#xff0c;回答者认为你<strong>应该去读他妈的手册</strong>。当然&#xff0c;基本上他是对的&#xff0c;你应该去读一读。</p> 
+                        <p>RTFM 有一个年轻的亲戚。如果你收到<code>STFW&#xff08;Search The Fucking Web&#xff09;</code>的回应&#xff0c;回答者认为你<strong>应该到他妈的网上搜索</strong>过了。那人多半也是对的&#xff0c;去搜索一下吧。&#xff08;更温和一点的说法是 <strong><a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Flmgtfy.com%2F">Google 是你的朋友 </a></strong>&#xff01;&#xff09;</p> 
+                        <p>在论坛&#xff0c;你也可能被要求去爬爬论坛的旧文。事实上&#xff0c;有人甚至可能热心地为你提供以前解决此问题的讨论串。但不要依赖这种关照&#xff0c;提问前应该先搜索一下旧文。</p> 
+                        <p>通常&#xff0c;用这两句之一回答你的人会给你一份包含你需要内容的手册或者一个网址&#xff0c;而且他们打这些字的时候也正在读着。这些答复意味着回答者认为</p> 
+                        <ul><li><strong>你需要的信息非常容易获得</strong>&#xff1b;</li><li><strong>你自己去搜索这些信息比灌给你能让你学到更多</strong>。</li></ul>
+                        <p>你不应该因此不爽&#xff1b;<strong>依照黑客的标准&#xff0c;他已经表示了对你一定程度的关注&#xff0c;而没有对你的要求视而不见</strong>。你应该对他祖母般的慈祥表示感谢。</p> 
+                        <h3 id="section4-2">如果还是搞不懂</h3> 
+                        <p>如果你看不懂回应&#xff0c;别立刻要求对方解释。像你以前试着自己解决问题时那样&#xff08;利用手册&#xff0c;FAQ&#xff0c;网络&#xff0c;身边的高手&#xff09;&#xff0c;先试着去搞懂他的回应。如果你真的需要对方解释&#xff0c;记得表现出你已经从中学到了点什么。</p> 
+                        <p>比方说&#xff0c;如果我回答你&#xff1a;<code>看来似乎是 zentry 卡住了&#xff1b;你应该先清除它。</code>&#xff0c;然后&#xff0c;这是一个<strong><em>很糟的</em></strong>后续问题回应&#xff1a;<code>zentry 是什么&#xff1f;</code> <strong><em>好</em></strong>的问法应该是这样&#xff1a;<code>哦~~~我看过说明了但是只有 -z 和 -p 两个参数中提到了 zentries&#xff0c;而且还都没有清楚的解释如何清除它。你是指这两个中的哪一个吗&#xff1f;还是我看漏了什么&#xff1f;</code></p> 
+                        <h3 id="section4-3">处理无礼的回应</h3> 
+                        <p>很多黑客圈子中看似无礼的行为并不是存心冒犯。相反&#xff0c;它是直接了当&#xff0c;一针见血式的交流风格&#xff0c;这种风格更注重解决问题&#xff0c;而不是使人感觉舒服而却模模糊糊。</p> 
+                        <p>如果你觉得被冒犯了&#xff0c;试着平静地反应。如果有人真的做了出格的事&#xff0c;邮件列表、新闻群组或论坛中的前辈多半会招呼他。如果这<strong><em>没有</em></strong>发生而你却发火了&#xff0c;那么你发火对象的言语可能在黑客社区中看起来是正常的&#xff0c;而<strong><em>你</em></strong>将被视为有错的一方&#xff0c;这将伤害到你获取信息或帮助的机会。</p> 
+                        <p>另一方面&#xff0c;你偶而真的会碰到无礼和无聊的言行。与上述相反&#xff0c;对真正的冒犯者狠狠地打击&#xff0c;用犀利的语言将其驳得体无完肤都是可以接受的。然而&#xff0c;在行事之前一定要非常非常的有根据。纠正无礼的言论与开始一场毫无意义的口水战仅一线之隔&#xff0c;黑客们自己莽撞地越线的情况并不鲜见。如果你是新手或外人&#xff0c;避开这种莽撞的机会并不高。如果你想得到的是信息而不是消磨时光&#xff0c;这时最好不要把手放在键盘上以免冒险。</p> 
+                        <p>&#xff08;有些人断言很多黑客都有轻度的自闭症或亚斯伯格综合症&#xff0c;缺少用于润滑人类社会<strong>正常</strong>交往所需的神经。这既可能是真也可能是假的。如果你自己不是黑客&#xff0c;兴许你认为我们脑袋有问题还能帮助你应付我们的古怪行为。只管这么干好了&#xff0c;我们不在乎。我们<strong><em>喜欢</em></strong>我们现在这个样子&#xff0c;并且通常对病患标记都有站得住脚的怀疑。&#xff09;</p> 
+                        <p>在下一节&#xff0c;我们会谈到另一个问题&#xff0c;当<strong><em>你</em></strong>行为不当时所会受到的<code>冒犯</code>。</p> 
+                        <h2 id="section5">如何避免扮演失败者</h2> 
+                        <p>在黑客社区的论坛中有那么几次你可能会搞砸 -- 以本指南所描述到的或类似的方式。而你会在公开场合中被告知你是如何搞砸的&#xff0c;也许攻击的言语中还会带点夹七夹八的颜色。</p> 
+                        <p>这种事发生以后&#xff0c;你能做的最糟糕的事莫过于哀嚎你的遭遇、宣称被口头攻击、要求道歉、高声尖叫、憋闷气、威胁诉诸法律、向其雇主报怨、忘了关马桶盖等等。相反地&#xff0c;你该这么做&#xff1a;</p> 
+                        <p>熬过去&#xff0c;这很正常。事实上&#xff0c;它是有益健康且合理的。</p> 
+                        <p>社区的标准不会自行维持&#xff0c;它们是通过参与者积极而<strong><em>公开地</em></strong>执行来维持的。不要哭嚎所有的批评都应该通过私下的邮件传送&#xff0c;它不是这样运作的。当有人评论你的一个说法有误或者提出不同看法时&#xff0c;坚持声称受到个人攻击也毫无益处&#xff0c;这些都是失败者的态度。</p> 
+                        <p>也有其它的黑客论坛&#xff0c;受过高礼节要求的误导&#xff0c;禁止参与者张贴任何对别人帖子挑毛病的消息&#xff0c;并声称<code>如果你不想帮助用户就闭嘴。</code> 结果造成有想法的参与者纷纷离开&#xff0c;这么做只会使它们沦为毫无意义的嘮叨与无用的技术论坛。</p> 
+                        <p>夸张的讲法是&#xff1a;你要的是<strong>友善</strong>&#xff08;以上述方式&#xff09;还是有用&#xff1f;两个里面挑一个。</p> 
+                        <p>记着&#xff1a;当黑客说你搞砸了&#xff0c;并且&#xff08;无论多么刺耳&#xff09;告诉你别再这样做时&#xff0c;他正在为关心<strong>你</strong>和<strong>他的社区</strong>而行动。对他而言&#xff0c;不理你并将你从他的生活中滤掉更简单。如果你无法做到感谢&#xff0c;至少要表现地有点尊严&#xff0c;别大声哀嚎&#xff0c;也别因为自己是个有戏剧性超级敏感的灵魂和自以为有资格的新来者&#xff0c;就指望别人像对待脆弱的洋娃娃那样对你。</p> 
+                        <p>有时候&#xff0c;即使你没有搞砸&#xff08;或者只是在他的想像中你搞砸了&#xff09;&#xff0c;有些人也会无缘无故地攻击你本人。在这种情况下&#xff0c;抱怨倒是<strong><em>真的</em></strong>会把问题搞砸。</p> 
+                        <p>这些来找麻烦的人要么是毫无办法但自以为是专家的不中用家伙&#xff0c;要么就是测试你是否真会搞砸的心理专家。其它读者要么不理睬&#xff0c;要么用自己的方式对付他们。这些来找麻烦的人在给他们自己找麻烦&#xff0c;这点你不用操心。</p> 
+                        <p>也别让自己卷入口水战&#xff0c;最好不要理睬大多数的口水战 -- 当然&#xff0c;是在你检验它们只是口水战&#xff0c;而并未指出你有搞砸的地方&#xff0c;且也没有巧妙地将问题真正的答案藏于其后&#xff08;这也是有可能的&#xff09;。</p> 
+                        <h2 id="section6">不该问的问题</h2> 
+                        <p>以下是几个经典蠢问题&#xff0c;以及黑客没回答时心中所想的&#xff1a;</p> 
+                        <p>问题&#xff1a;<a href="#q1">我能在哪找到 X 程序或 X 资源&#xff1f;</a></p> 
+                        <p>问题&#xff1a;<a href="#q2">我怎样用 X 做 Y&#xff1f;</a></p> 
+                        <p>问题&#xff1a;<a href="#q3">如何设定我的 shell 提示&#xff1f;</a></p> 
+                        <p>问题&#xff1a;<a href="#q4">我可以用 Bass-o-matic 文件转换工具将 AcmeCorp 档案转换为 TeX 格式吗&#xff1f;</a></p> 
+                        <p>问题&#xff1a;<a href="#q5">我的程序/设定/SQL 语句没有用 </a></p> 
+                        <p>问题&#xff1a;<a href="#q6">我的 Windows 电脑有问题&#xff0c;你能帮我吗&#xff1f;</a></p> 
+                        <p>问题&#xff1a;<a href="#q7">我的程序不会动了&#xff0c;我认为系统工具 X 有问题 </a></p> 
+                        <p>问题&#xff1a;<a href="#q8">我在安装 Linux&#xff08;或者 X &#xff09;时有问题&#xff0c;你能帮我吗&#xff1f;</a></p> 
+                        <p>问题&#xff1a;<a href="#q9">我怎么才能破解 root 帐号/窃取 OP 特权/读别人的邮件呢&#xff1f;</a></p> 
+                        <hr />
+
+                        <blockquote> 
+                         <p>问题&#xff1a;我能在哪找到 X 程序或 X 资源&#xff1f;</p> 
+                        </blockquote> 
+                        <p>回答&#xff1a;就在我找到它的地方啊&#xff0c;白痴 -- 搜索引擎的那一头。天哪&#xff01;难道还有人不会用 <a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fwww.google.com">Google</a> 吗&#xff1f;</p> 
+                        <blockquote> 
+                         <p>问题&#xff1a;我怎样用 X 做 Y&#xff1f;</p> 
+                        </blockquote> 
+                        <p>回答&#xff1a;如果你想解决的是 Y &#xff0c;提问时别给出可能并不恰当的方法。这种问题说明提问者不但对 X 完全无知&#xff0c;也对 Y 要解决的问题糊涂&#xff0c;还被特定形势禁锢了思维。最好忽略这种人&#xff0c;等他们把问题搞清楚了再说。</p>  
+                        <blockquote> 
+                         
+                        </blockquote> 
+                        <p>回答&#xff1a;如果你有足够的智慧提这个问题&#xff0c;你也该有足够的智慧去 <a href="#RTFM">RTFM</a>&#xff0c;然后自己去找出来。</p> 
+                        
+                        <blockquote> 
+                         <p>问题&#xff1a;我可以用 Bass-o-matic 文件转换工具将 AcmeCorp 档案转换为 TeX 格式吗&#xff1f;</p> 
+                        </blockquote> 
+                        <p>回答&#xff1a;试试看就知道了。如果你试过&#xff0c;你既知道了答案&#xff0c;就不用浪费我的时间了。</p> 
+                        
+                        <blockquote> 
+                         <p>问题&#xff1a;我的程序/设定/SQL 语句没有用</p> 
+                        </blockquote> 
+                        <p>回答&#xff1a;这不算是问题吧&#xff0c;我对要我问你二十个问题才找得出你真正问题的问题没兴趣 -- 我有更有意思的事要做呢。在看到这类问题的时候&#xff0c;我的反应通常不外如下三种</p> 
+                        <ul><li>你还有什么要补充的吗&#xff1f;</li><li>真糟糕&#xff0c;希望你能搞定。</li><li>这关我有什么屁事&#xff1f;</li></ul>
+                        
+                        <blockquote> 
+                         <p>问题&#xff1a;我的 Windows 电脑有问题&#xff0c;你能帮我吗&#xff1f;</p> 
+                        </blockquote> 
+                        <p>回答&#xff1a;能啊&#xff0c;扔掉萎软的垃圾&#xff0c;换个像 Linux 或 BSD 的开放源代码操作系统吧。</p> 
+                        <p>注意&#xff1a;如果程序有官方版 Windows 或者与 Windows 有互动&#xff08;如 Samba&#xff09;&#xff0c;你<strong><em>可以</em></strong>问与 Windows 相关的问题&#xff0c; 只是别对问题是由 Windows 操作系统而不是程序本身造成的回复感到惊讶&#xff0c; 因为 Windows 一般来说实在太烂&#xff0c;这种说法通常都是对的。</p> 
+                         
+                        <blockquote> 
+                         <p>问题&#xff1a;我的程序不会动了&#xff0c;我认为系统工具 X 有问题</p> 
+                        </blockquote> 
+                        <p>回答&#xff1a;你完全有可能是第一个注意到被成千上万用户反复使用的系统调用与函数库档案有明显缺陷的人&#xff0c;更有可能的是你完全没有根据。不同凡响的说法需要不同凡响的证据&#xff0c;当你这样声称时&#xff0c;你必须有清楚而详尽的缺陷说明文件作后盾。</p> 
+                        
+                        <blockquote> 
+                         <p>问题&#xff1a;我在安装 Linux&#xff08;或者 X &#xff09;时有问题&#xff0c;你能帮我吗&#xff1f;</p> 
+                        </blockquote> 
+                        <p>回答&#xff1a;不能&#xff0c;我只有亲自在你的电脑上动手才能找到毛病。还是去找你当地的 Linux 使用群组者寻求实际的指导吧&#xff08;你能在<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fwww.linux.org%2Fgroups%2Findex.html">这儿 </a> 找到使用者群组的清单&#xff09;。</p> 
+                        <p>注意&#xff1a;如果安装问题与某 Linux 的发行版有关&#xff0c;在它的邮件列表、论坛或本地使用者群组中提问也许是恰当的。此时&#xff0c;应描述问题的准确细节。在此之前&#xff0c;先用 <code>Linux</code> 和<strong><em>所有</em></strong>被怀疑的硬件作关键词仔细搜索。</p> 
+                        
+                        <blockquote> 
+                         <p>问题&#xff1a;我怎么才能破解 root 帐号/窃取 OP 特权/读别人的邮件呢&#xff1f;</p> 
+                        </blockquote> 
+                        <p>回答&#xff1a;想要这样做&#xff0c;说明了你是个卑鄙小人&#xff1b;想找个黑客帮你&#xff0c;说明你是个白痴&#xff01;</p> 
+                        <h2 id="section7">好问题与蠢问题</h2> 
+                        <p>最后&#xff0c;我将透过举一些例子&#xff0c;来说明怎样聪明的提问&#xff1b;同一个问题的两种问法被放在一起&#xff0c;一种是愚蠢的&#xff0c;另一种才是明智的。</p> 
+                        <p><strong><em>蠢问题</em></strong>&#xff1a;</p> 
+                        <blockquote> 
+                         <p>我可以在哪儿找到关于 Foonly Flurbamatic 的资料&#xff1f;</p> 
+                        </blockquote> 
+                        <p>这种问法无非想得到 <a href="#RTFM">STFW</a> 这样的回答。</p> 
+                        <p><strong><em>聪明问题</em></strong>&#xff1a;</p> 
+                        <blockquote> 
+                         <p>我用 Google 搜索过 &#34;Foonly Flurbamatic 2600&#34;&#xff0c;但是没找到有用的结果。谁知道上哪儿去找对这种设备编程的资料&#xff1f;</p> 
+                        </blockquote> 
+                        <p>这个问题已经 STFW 过了&#xff0c;看起来他真的遇到了麻烦。</p> 
+                        <p><strong><em>蠢问题</em></strong></p> 
+                        <blockquote> 
+                         <p>我从 foo 项目找来的源码没法编译。它怎么这么烂&#xff1f;</p> 
+                        </blockquote> 
+                        <p>他觉得都是别人的错&#xff0c;这个傲慢自大的提问者</p> 
+                        <p><strong><em>聪明问题</em></strong></p> 
+                        <blockquote> 
+                         <p>foo 项目代码在 Nulix 6.2 版下无法编译通过。我读过了 FAQ&#xff0c;但里面没有提到跟 Nulix 有关的问题。这是我编译过程的记录&#xff0c;我有什么做的不对的地方吗&#xff1f;</p> 
+                        </blockquote> 
+                        <p>提问者已经指明了环境&#xff0c;也读过了 FAQ&#xff0c;还列出了错误&#xff0c;并且他没有把问题的责任推到别人头上&#xff0c;他的问题值得被关注。</p> 
+                        <p><strong><em>蠢问题</em></strong></p> 
+                        <blockquote> 
+                         <p>我的主机板有问题了&#xff0c;谁来帮我&#xff1f;</p> 
+                        </blockquote> 
+                        <p>某黑客对这类问题的回答通常是&#xff1a;<code>好的&#xff0c;还要帮你拍拍背和换尿布吗&#xff1f;</code>&#xff0c;然后按下删除键。</p> 
+                        <p><strong><em>聪明问题</em></strong></p> 
+                        <blockquote> 
+                         <p>我在 S2464 主机板上试过了 X 、 Y 和 Z &#xff0c;但没什么作用&#xff0c;我又试了 A 、 B 和 C 。请注意当我尝试 C 时的奇怪现象。显然 florbish 正在 grommicking&#xff0c;但结果出人意料。通常在 Athlon MP 主机板上引起 grommicking 的原因是什么&#xff1f;有谁知道接下来我该做些什么测试才能找出问题&#xff1f;</p> 
+                        </blockquote> 
+                        <p>这个家伙&#xff0c;从另一个角度来看&#xff0c;值得去回答他。他表现出了解决问题的能力&#xff0c;而不是坐等天上掉答案。</p> 
+                        <p>在最后一个问题中&#xff0c;注意<code>告诉我答案</code>和<code>给我启示&#xff0c;指出我还应该做什么诊断工作</code>之间微妙而又重要的区别。</p> 
+                        <p>事实上&#xff0c;后一个问题源自于 2001 年 8 月在 Linux 内核邮件列表&#xff08;lkml&#xff09;上的一个真实的提问。我&#xff08;Eric&#xff09;就是那个提出问题的人。我在 Tyan S2464 主板上观察到了这种无法解释的锁定现象&#xff0c;列表成员们提供了解决这一问题的重要信息。</p> 
+                        <p>通过我的提问方法&#xff0c;我给了别人可以咀嚼玩味的东西&#xff1b;我设法让人们很容易参与并且被吸引进来。我显示了自己具备和他们同等的能力&#xff0c;并邀请他们与我共同探讨。通过告诉他们我所走过的弯路&#xff0c;以避免他们再浪费时间&#xff0c;我也表明了对他们宝贵时间的尊重。</p> 
+                        <p>事后&#xff0c;当我向每个人表示感谢&#xff0c;并且赞赏这次良好的讨论经历的时候&#xff0c; 一个 Linux 内核邮件列表的成员表示&#xff0c;他觉得我的问题得到解决并非由于我是这个列表中的<strong><em>名人</em></strong>&#xff0c;而是因为我用了正确的方式来提问。</p> 
+                        <p>黑客从某种角度来说是拥有丰富知识但缺乏人情味的家伙&#xff1b;我相信他是对的&#xff0c;如果我<strong><em>像</em></strong>个乞讨者那样提问&#xff0c;不论我是谁&#xff0c;一定会惹恼某些人或者被他们忽视。他建议我记下这件事&#xff0c;这直接导致了本指南的出现。</p> 
+                        <h2 id="section8">如果得不到回答</h2> 
+                        <p>如果仍得不到回答&#xff0c;请不要以为我们觉得无法帮助你。有时只是看到你问题的人不知道答案罢了。没有回应不代表你被忽视&#xff0c;虽然不可否认这种差别很难区分。</p> 
+                        <p>总的来说&#xff0c;简单的重复张贴问题是个很糟的点子。这将被视为无意义的喧闹。有点耐心&#xff0c;知道你问题答案的人可能生活在不同的时区&#xff0c;可能正在睡觉&#xff0c;也有可能你的问题一开始就没有组织好。</p> 
+                        <p>你可以通过其他渠道获得帮助&#xff0c;这些渠道通常更适合初学者的需要。</p> 
+                        <p>有许多网上的以及本地的使用者群组&#xff0c;由热情的软件爱好者&#xff08;即使他们可能从没亲自写过任何软件&#xff09;组成。通常人们组建这样的团体来互相帮助并帮助新手。</p> 
+                        <p>另外&#xff0c;你可以向很多商业公司寻求帮助&#xff0c;不论公司大还是小。别为要付费才能获得帮助而感到沮丧&#xff01;毕竟&#xff0c;假使你的汽车发动机汽缸密封圈爆掉了-- 完全可能如此 --你还得把它送到修车铺&#xff0c;并且为维修付费。就算软件没花费你一分钱&#xff0c;你也不能强求技术支持总是免费的。</p> 
+                        <p>对像是 Linux 这种大众化的软件&#xff0c;每个开发者至少会对应到上万名使用者。根本不可能由一个人来处理来自上万名使用者的求助电话。要知道&#xff0c;即使你要为这些协助付费&#xff0c;和你所购买的同类软件相比&#xff0c;你所付出的也是微不足道的&#xff08;通常封闭源代码软件的技术支持费用比开放源代码软件的要高得多&#xff0c;且内容也没那么丰富&#xff09;。</p> 
+                        <h2 id="section9">如何更好地回答问题</h2> 
+                        <p><strong><em>态度和善一点</em></strong>。问题带来的压力常使人显得无礼或愚蠢&#xff0c;其实并不是这样。</p> 
+                        <p><strong><em>对初犯者私下回复</em></strong>。对那些坦诚犯错之人没有必要当众羞辱&#xff0c;一个真正的新手也许连怎么搜索或在哪找常见问题都不知道。</p> 
+                        <p><strong><em>如果你不确定&#xff0c;一定要说出来</em></strong>&#xff01;一个听起来权威的错误回复比没有还要糟&#xff0c;别因为听起来像个专家很好玩&#xff0c;就给别人乱指路。要谦虚和诚实&#xff0c;给提问者与同行都树个好榜样。</p> 
+                        <p><strong><em>如果帮不了忙&#xff0c;也别妨碍他</em></strong>。不要在实际步骤上开玩笑&#xff0c;那样也许会毁了使用者的设置 --有些可怜的呆瓜会把它当成真的指令。</p> 
+                        <p><strong><em>试探性的反问以引出更多的细节</em></strong>。如果你做得好&#xff0c;提问者可以学到点东西 --你也可以。试试将蠢问题转变成好问题&#xff0c;别忘了我们都曾是新手。</p> 
+                        <p>尽管对那些懒虫抱怨一声 RTFM 是正当的&#xff0c;能指出文件的位置&#xff08;即使只是建议个 Google 搜索关键词&#xff09;会更好。</p> 
+                        <p><strong><em>如果你决定回答&#xff0c;就请给出好的答案</em></strong>。当别人正在用错误的工具或方法时别建议笨拙的权宜之计&#xff08;wordaround&#xff09;&#xff0c;应推荐更好的工具&#xff0c;重新界定问题。</p> 
+                        <p><strong><em>正面的回答问题</em></strong>&#xff01;如果这个提问者已经很深入的研究而且也表明已经试过 X 、 Y 、 Z 、 A 、 B 、 C 但没得到结果&#xff0c;回答 <code>试试看 A 或是 B</code> 或者 <code>试试 X 、 Y 、 Z 、 A 、 B 、 C</code> 并附上一个链接一点用都没有。</p> 
+                        <p><strong><em>帮助你的社区从问题中学习</em></strong>。当回复一个好问题时&#xff0c;问问自己<code>如何修改相关文件或常见问题文件以免再次解答同样的问题&#xff1f;</code>&#xff0c;接着再向文件维护者发一份补丁。</p> 
+                        <p>如果你是在研究一番后才做出的回答&#xff0c;<strong><em>展现你的技巧而不是直接端出结果</em></strong>。毕竟<code>授人以鱼不如授人以渔</code>。</p> 
+                        <h2 id="section10">相关资源</h2> 
+                        <p>如果你需要个人电脑、Unix 系统和网络如何运作的基础知识&#xff0c;参阅<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fen.tldp.org%2FHOWTO%2FUnix-and-Internet-Fundamentals-HOWTO%2F">Unix 系统和网络基本原理 </a>。</p> 
+                        <p>当你发布软件或补丁时&#xff0c;试着按<a href="https://links.jianshu.com/go?to&#61;http%3A%2F%2Fen.tldp.org%2FHOWTO%2FSoftware-Release-Practice-HOWTO%2Findex.html">软件发布实践 </a> 操作。</p> 
+                        <h2 id="section11">鸣谢</h2> 
+                        <p>Evelyn Mitchel 贡献了一些愚蠢问题例子并启发了编写<code>如何更好地回答问题</code>这一节&#xff0c; Mikhail Ramendik 贡献了一些特别有价值的建议和改进。</p> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- 页脚信息 -->
+        <footer id="footer">
+            <!-- 版心 -->
+            <div class="footer-main">
+                <!-- 关于我的信息 -->
+                <div class="about-me">
+                    <!-- 微信二维码 -->
+                    <div class="three-wide-column">
+                        <div class="link-list">
+                            <div class="main">
+                                <img src="./resources/WeChart.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three-wide-column">
+                        <h4 class="title">最新博客</h4>
+                        <div class="nav">
+                            <a href="blog.html" class="nav-item">
+                                <span>提问的智慧</span>
+                            </a>
+                            <a href="#" class="nav-item">
+                                <span>前端学习路线</span>
+                            </a>
+                            <a href="#" class="nav-item">
+                                <span>go学习路线</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="three-wide-column">
+                        <h4 class="title">联系我</h4>
+                        <div class="nav">
+                            <a href="#" class="nav-item">
+                                QQ:2313621769
+                            </a>
+                            <a href="#" class="nav-item">
+                                Email:2313621769@qq.com
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="seven-wide-column">
+                        <h4 class="title">Blog</h4>
+                        <p class="item">
+                            这是我的个人博客、会分享关于编程、成长、思考相关的任何内容，
+                            希望可以给来到这儿的人有所帮助...
+                        </p>
+                    </div>
+                    
+                </div>
+                <!-- 下划线 -->
+                <div class="underline">
+
+                </div>
+                <!-- 网站的信息 -->
+                <p class="about-blog">
+                    <i></i> 2022 - 2022 Blog designed by<i class="fa fa-gratipay"></i> Lifeline
+                </p>
+            </div>
+        </footer>
+        <!-- 右下角工具栏 -->
+        <div id="tools">
+            <!-- 版心 -->
+            <div class="tool-main">
+                <!-- 向上链接 -->
+                <div class="up">
+                    <a href="#header" >
+                        <i class="fa fa-arrow-up"></i>
+                    </a>
+                </div>
+                <!-- 当前百分比 -->
+                <div class="number">
+                    <p class="text">0%</p>
+                </div>
+                <!-- 向下链接 -->
+                <div class="down">
+                    <a href="#footer">
+                        <i class="fa fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 首页js -->
+    <script src="./js/index.js"></script>
+    <!-- 目录生成tocbot js引入 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.nav-item .catalogue .catalogue-list',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.article-main',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+            });
+    </script>
+</body>
+</html>

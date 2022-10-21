@@ -1,0 +1,89 @@
+.Top{
+    #body{
+        .body-main{
+            .article{
+                .article-main{
+                    .item{
+                        position: relative;
+                        padding: 1.25rem 1.875rem;
+                        small{
+                            color: #888;
+                            margin: auto 0.3125rem;
+                        }
+                        >::before{
+                            content: "";
+                            position:absolute;
+                            z-index: 1;
+                            box-sizing: unset;
+                            top: 1.9rem;
+                            left: 0;
+                            width: 0.6rem;
+                            height: 0.6rem;
+                            border: 0.15rem solid rgb(236, 27, 27);
+                            border-radius: 50%;
+                            background: #ffffff;
+                        }
+                        >:not(:last-child)::after{
+                            content: "";
+                            position:absolute;
+                            top: 1.9rem;
+                            bottom: -1.9rem;
+                            left: 0.35rem;
+                            border-left: 0.2rem solid rgb(246, 173, 173);
+                        }
+                        >:first-child::after{
+                            border-left-style: dashed;
+                        }
+                        .header{
+                            box-sizing: border-box;
+                            color: rgb(51, 51, 51);
+                            display: block;
+                            font-size: 24px;
+                            font-weight: 700;
+                            line-height: 36px;
+                            padding-bottom: 20px;
+                            padding-left: 30px;
+                            padding-right: 30px;
+                            padding-top: 20px;
+                            position: relative;
+                            :hover{
+                                color: rgb(89, 216, 233);
+                            }
+                            a{
+                                color: rgb(51, 51, 51);
+                                
+                            }
+                        }
+                        .section{
+                            box-sizing: border-box;
+                            color: rgb(51, 51, 51);
+                            display: block;
+                            font-size: 18.72px;
+                            font-weight: 700;
+                            line-height: 28.08px;
+                            padding-bottom: 20px;
+                            padding-left: 30px;
+                            padding-right: 30px;
+                            padding-top: 20px;
+                            position: relative;
+
+                            ::before{
+                                width: 0.4rem;
+                                height: 0.4rem;
+                                margin-left: 0.1rem;
+                            }
+                            a{
+                                color: rgb(51, 51, 51);
+                                
+                            }
+                            :hover{
+                                    color: rgb(89, 216, 233);
+                                }
+                        }
+                    }
+                
+                }
+            }
+        }
+    }
+}

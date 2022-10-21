@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冷暖自知</title>
+    <!--引入font-awesome图形文字组件库，4.7.0版本-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <!--引入jQuery -->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <!--公共css样式-->
+    <link rel="stylesheet" href="./css/publicCss.css">
+    <!--首页css样式-->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 首页js -->
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <!-- 顶级元素  -->
+    <div class="Top">
+        <!-- 头部 -->
+        <header id ="header">
+            <!-- 版心 -->
+            <div class="header-main">
+                <h1>
+                    
+                </h1>
+            </div>
+            <div id="nav">
+                <div class="nav-main">
+                    <!-- 左侧logo/网名 -->
+                    <div class="logo">
+                        <h3>
+                            Lifeline
+                        </h3>
+                    </div>
+                    <!-- 左侧搜索栏 -->
+                    <div class="search">
+                        <!-- form表单 -->
+                        <form class="search-form">
+                            <!-- 搜索框 -->
+                            <input type="text" placeholder="Search or jump to..." class="search-text">
+                            <!-- 提交按钮 -->
+                            <button class="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <!-- 左侧导航栏 -->
+                    <div class="header-nav">
+                        <!-- 版心 -->
+                        <nav class="header-nav-main">
+                            <!-- 导航无序列表 -->
+                            <ul class="nav">
+                                <!-- 设置相对定位作为下拉框的父盒子 -->
+                                <li class="nav-item" data-index="0" id="item-0">
+                                    <a href="index.html"> 
+                                        <i class="fa fa-home"></i>
+                                        <span>主页小窝</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-index="1" id="item-1">
+                                    <a class="to-about" href="about.html"> 
+                                        <i class="fa fa-gratipay"></i>
+                                        <span>了解一下</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-index="2" id="item-2">
+                                    <a href="#"  class="hidden"> 
+                                        <i class="fa fa-leaf"></i>
+                                        <span>个人随笔</span>
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <!-- 下拉隐藏框 -->
+                                    <ul class="submenu">
+                                        <li class="item">
+                                            <a href="article.html" class="to-article">
+                                                <i class="fa fa-pencil-square"></i>
+                                                <span>文章</span>
+                                            </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="classify.html" class="to-classify">
+                                                <i class="fa fa-list"></i>
+                                                <span>分类</span>
+                                            </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="tag.html" class="to-tag">
+                                                <i class="fa fa-tag"></i>
+                                                <span>标签</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="brand">
+            </div>
+            <div class="imgs">
+                <ul>
+                    <li class="item" style="background-image: url(./resources/img1.jpg);">
+                        
+                    </li>
+                    <!-- <li class="item" style="background-image: url(./resources/img2.jpg);">
+
+                    </li>
+                    <li class="item" style="background-image: url(./resources/img3.jpg);">
+
+                    </li>
+                    <li class="item" style="background-image: url(./resources/img4.jpg);">
+
+                    </li>
+                    <li class="item" style="background-image: url(./resources/img5.jpg);">
+
+                    </li> -->
+                </ul>
+            </div>
+        </header>  
+        <!-- 波浪图 -->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+					viewBox="0 24 150 28"preserveAspectRatio="none" shape-rendering="auto" >
+					<defs>
+						<path id="gentle-wave"
+							d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+					</defs>
+					<g class="parallax">
+						<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+						<use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(255,255,255,0.5)" />
+						<use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(255,255,255,0.3)" />
+						<use xlink:href="#gentle-wave" x="48" y="6" fill="#f6f6f6" />
+					</g>
+			</svg>
+                    
+        </div>
+        <!-- 主体 -->
+        <div id="body">
+            <!-- 版心 -->
+            <div class="body-main">
+                <!-- 侧边绝对定位个性栏 -->
+                <div class="aside">
+                    <!-- 版心元素 -->
+                    <div class="aside-main">
+                        <!-- 头像及简介 -->
+                        <div class="author">
+                            <img class="logo" src="./resources/logo.jpg">
+                            <p>Lifeline</p>
+                            <div class="description">前路昭然,你我共进</div>
+                        </div>
+                        <!-- 导航栏 -->
+                        <nav class="state">
+                            <!-- 文章 -->
+                            <div class="item-article">
+                                <a href="article.html" class="to-article">
+                                    <span class="count">16</span>
+                                    <span class="name">文章</span>
+                                </a>
+                            </div>
+                            <!-- 分类 -->
+                            <div class="item-categories">
+                                <a href="classify.html" class="to-classify">
+                                    <span class="count">8</span>
+                                    <span class="name">分类</span>
+                                </a>
+                            </div>
+                            <!-- 标签 -->
+                            <div class="item-tags">
+                                <a href="tag.html" class="to-tag">
+                                    <span class="count">9</span>
+                                    <span class="name">标签</span>
+                                </a>
+                            </div>
+                        </nav>
+                        <!-- 联系方式图标 -->
+                        <div class="social">
+                            <a href="https://github.com/Lifelinexie">
+                                <i class="fa fa-github fa-lg" id="github"></i>
+                            </a>
+                            <a href="https://weibo.com">
+                                <i class="fa fa-weibo fa-lg" id="weiBo"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-address-card fa-lg" id="address-card"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope fa-lg" id="envelope"></i>
+                            </a>
+                        </div>
+                        <!-- 侧边导航条 -->
+                        <ul class="menu"> 
+                            <li class="item" id="now-index">
+                                <a href="index.html">
+                                    <i class="fa fa-home"></i>
+                                    主页小窝
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="about.html" class="to-about">
+                                    <i class="fa fa-gratipay"></i>
+                                    了解一下
+                                </a>
+                            </li>
+                            <li class="item-dropdown">
+                                <ul class="item">
+                                    <a href="#" class="to-about">
+                                        <i class="fa fa-leaf"></i>
+                                        个人随笔
+                                </a>
+                                </ul>
+                                
+                                
+                                <ul class="hidden">
+                                    <li class="menu-item">
+                                        <a class="to-article" href="article.html" >
+                                            <i class="fa fa-pencil-square"></i>
+                                            <span>文章</span>
+                                        </a>
+                                        
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="to-classify" href="classify.html">
+                                            <i class="fa fa-list"></i>
+                                            <span>分类</span>
+                                        </a>
+                                        
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="to-tag" href="tag.html">
+                                            <i class="fa fa-tag"></i>
+                                        <span>标签</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 文章卡片 -->
+                <div class="article">
+                    <!-- 版心 -->
+                    <div class="article-main">
+                        <!-- 精彩分类 -->
+                        <h2 class="divider">精彩分类</h2>
+                        <div class="cards">
+                            <div class="item">
+                                <!-- 未翻转的内容 -->
+                                <div class="cover-now" style="background-image:url('./resources/html+css+js.jpg') ;">
+                                    <h2 class="cover-title">前端三件套</h2>
+                                </div>
+                                <!-- 翻转后的内容 -->
+                                <div class="cover-info">
+                                    <div class="ribbon">
+                                        <a href="javascrit:;">前端三件套</a>
+                                    </div>
+                                    <div class="inner">
+                                        <ul class="posts">
+                                            <li>
+                                                <a>html学习</a>
+                                            </li>
+                                            <li>
+                                                <a>css学习</a>
+                                            </li>
+                                            <li>
+                                                <a>js学习</a>
+                                            </li>
+                                        </ul>
+                                        <div class="meta-footer">
+                                            <span>
+                                                <i class="fa fa-file-text"></i>
+                                                9 篇文章
+                                            </span>
+                                            
+                                        </div>
+                                        <a class="btn" href="javascrit:;">
+                                            more..
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <!-- 未翻转的内容 -->
+                                <div class="cover-now" style="background-image:url('./resources/go.jpg') ;">
+                                    <h2 class="cover-title">go学习</h2>
+                                </div>
+                                <!-- 翻转后的内容 -->
+                                <div class="cover-info">
+                                    <div class="ribbon">
+                                        <a href="javascrit:;">go学习</a>
+                                    </div>
+                                    <div class="inner">
+                                        <ul class="posts">
+                                            <li>
+                                                <a>go基础</a>
+                                            </li>
+                                            <li>
+                                                <a>goWeb</a>
+                                            </li>
+                                            <li>
+                                                <a >go学习路线</a>
+                                            </li>
+                                        </ul>
+                                        <div class="meta-footer">
+                                            <span>
+                                                <i class="fa fa-file-text"></i>
+                                                15 篇文章
+                                            </span>
+                                            
+                                        </div>
+                                        <a class="btn" href="javascrit:;">
+                                            more..
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <!-- 未翻转的内容 -->
+                                <div class="cover-now" style="background-image:url('./resources/前端工程化.jpg') ;">
+                                    <h2 class="cover-title">工程化</h2>
+                                </div>
+                                <!-- 翻转后的内容 -->
+                                <div class="cover-info">
+                                    <div class="ribbon">
+                                        <a href="javascrit:;">前端工程化</a>
+                                    </div>
+                                    <div class="inner">
+                                        <ul class="posts">
+                                            <li>
+                                                <a>打包工具-guild的使用</a>
+                                            </li>
+                                            <li>
+                                                <a>打包工具-webpack的使用</a>
+                                            </li>
+                                            <li>
+                                                <a>跨域问题解决</a>
+                                            </li>
+                                        </ul>
+                                        <div class="meta-footer">
+                                            <span>
+                                                <i class="fa fa-file-text"></i>
+                                                15 篇文章
+                                            </span>
+                                            
+                                        </div>
+                                        <a class="btn" href="javascrit:;">
+                                            more..
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <!-- 未翻转的内容 -->
+                                <div class="cover-now" style="background-image:url('./resources/cloud.jpg') ;">
+                                    <h2 class="cover-title">个人服务器</h2>
+                                </div>
+                                <!-- 翻转后的内容 -->
+                                <div class="cover-info">
+                                    <div class="ribbon">
+                                        <a href="javascrit:;">个人服务器</a>
+                                    </div>
+                                    <div class="inner">
+                                        <ul class="posts">
+                                            <li>
+                                                <a>hexo安装篇</a>
+                                            </li>
+                                        </ul>
+                                        <div class="meta-footer">
+                                            <span>
+                                                <i class="fa fa-file-text"></i>
+                                                3 篇文章
+                                            </span>
+                                            
+                                        </div>
+                                        <a class="btn" href="javascrit:;">
+                                            more..
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 文章列表 -->
+                        <h2 class="divider">文章列表</h2>
+                        <div class="article-list">
+                            <article class="item">
+                                <div class="cover">
+                                    <a>
+                                        <img src="./resources/question.jfif">
+                                    </a>
+                                    
+                                </div>
+                                <div class="info">
+                                    <div class="meta">
+                                        <span class="meta-item" title="创建时间">
+                                            <span class="font-a">
+                                                <!-- 时间 -->
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                            <time>
+                                                <span>2022-03-14</span>
+                                            </time>
+
+                                        </span>
+                                        <span class="meta-item" title="文本字数">
+                                            <span class="font-a">
+                                                <i class="fa fa-pencil"></i>
+                                            </span>
+                                            <span>7.5k</span>
+                                            <span class="text">字</span>
+                                        </span>
+                                        <span class="meta-item" title="阅读时长">
+                                            <span class="font-a">
+                                                <i class="fa fa-clock-o"></i>
+                                            </span>
+                                            <span>7分钟</span>
+                                            
+                                        </span>
+                                    </div>
+                                    <h3>
+                                        <a href="blog.html">提问的智慧</a>
+                                    </h3>
+                                    <div class="excerpt">
+                                        <hr>
+                                    </div>
+                                    <div class="meta-footer">
+                                        <span>
+                                            <a>
+                                                <i class="fa fa-flag"></i>
+                                                生活智慧
+                                            </a>
+
+                                        </span>
+                                        
+                                    </div>
+                                    <a class="btn">
+                                        more...
+                                    </a>
+                                </div>
+                            </article>
+                            
+                            <article class="item">
+                                <div class="cover">
+                                    <a>
+                                        <img src="./resources/index.jpeg">
+                                    </a>
+                                    
+                                </div>
+                                <div class="info">
+                                    <div class="meta">
+                                        <span class="meta-item" title="创建时间">
+                                            <span class="font-a">
+                                                <!-- 时间 -->
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                            <time>
+                                                <span>2022-04-14</span>
+                                            </time>
+
+                                        </span>
+                                        <span class="meta-item" title="文本字数">
+                                            <span class="font-a">
+                                                <i class="fa fa-pencil"></i>
+                                            </span>
+                                            <span>6.5k</span>
+                                            <span class="text">字</span>
+                                        </span>
+                                        <span class="meta-item" title="阅读时长">
+                                            <span class="font-a">
+                                                <i class="fa fa-clock-o"></i>
+                                            </span>
+                                            <span>1分钟</span>
+                                            
+                                        </span>
+                                    </div>
+                                    <h3>
+                                        <a href="blog.html">页面渲染过程</a>
+                                    </h3>
+                                    <div class="excerpt">
+                                        <hr>
+                                    </div>
+                                    <div class="meta-footer">
+                                        <span>
+                                            <a>
+                                                <i class="fa fa-flag"></i>
+                                                前端三件套
+                                            </a>
+
+                                        </span>
+                                        
+                                    </div>
+                                    <a class="btn">
+                                        more...
+                                    </a>
+                                </div>
+                            </article>
+
+                            <article class="item">
+                                <div class="cover">
+                                    <a>
+                                        <img src="./resources/go.jpg">
+                                    </a>
+                                    
+                                </div>
+                                <div class="info">
+                                    <div class="meta">
+                                        <span class="meta-item" title="创建时间">
+                                            <span class="font-a">
+                                                <!-- 时间 -->
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                            <time>
+                                                <span>2022-04-24</span>
+                                            </time>
+
+                                        </span>
+                                        <span class="meta-item" title="文本字数">
+                                            <span class="font-a">
+                                                <i class="fa fa-pencil"></i>
+                                            </span>
+                                            <span>15.0k</span>
+                                            <span class="text">字</span>
+                                        </span>
+                                        <span class="meta-item" title="阅读时长">
+                                            <span class="font-a">
+                                                <i class="fa fa-clock-o"></i>
+                                            </span>
+                                            <span>10分钟</span>
+                                            
+                                        </span>
+                                    </div>
+                                    <h3>
+                                        <a href="blog.html">go学习路线</a>
+                                    </h3>
+                                    <div class="excerpt">
+                                        <hr>
+                                    </div>
+                                    <div class="meta-footer">
+                                        <span>
+                                            <a>
+                                                <i class="fa fa-flag"></i>
+                                                go学习
+                                            </a>
+
+                                        </span>
+                                        
+                                    </div>
+                                    <a class="btn">
+                                        more...
+                                    </a>
+                                </div>
+                            </article>
+
+                            <article class="item">
+                                <div class="cover">
+                                    <a>
+                                        <img src="./resources/cors.jpeg">
+                                    </a>
+                                    
+                                </div>
+                                <div class="info">
+                                    <div class="meta">
+                                        <span class="meta-item" title="创建时间">
+                                            <span class="font-a">
+                                                <!-- 时间 -->
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                            <time>
+                                                <span>2022-03-04</span>
+                                            </time>
+
+                                        </span>
+                                        <span class="meta-item" title="文本字数">
+                                            <span class="font-a">
+                                                <i class="fa fa-pencil"></i>
+                                            </span>
+                                            <span>14.5k</span>
+                                            <span class="text">字</span>
+                                        </span>
+                                        <span class="meta-item" title="阅读时长">
+                                            <span class="font-a">
+                                                <i class="fa fa-clock-o"></i>
+                                            </span>
+                                            <span>13分钟</span>
+                                            
+                                        </span>
+                                    </div>
+                                    <h3>
+                                        <a href="blog.html">跨域问题解决</a>
+                                    </h3>
+                                    <div class="excerpt">
+                                        <hr>
+                                    </div>
+                                    <div class="meta-footer">
+                                        <span>
+                                            <a>
+                                                <i class="fa fa-flag"></i>
+                                                工程化
+                                            </a>
+
+                                        </span>
+                                        
+                                    </div>
+                                    <a class="btn">
+                                        more...
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- 页脚信息 -->
+        <footer id="footer">
+            <!-- 版心 -->
+            <div class="footer-main">
+                <!-- 关于我的信息 -->
+                <div class="about-me">
+                    <!-- 微信二维码 -->
+                    <div class="three-wide-column">
+                        <div class="link-list">
+                            <div class="main">
+                                <img src="./resources/WeChart.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three-wide-column">
+                        <h4 class="title">最新博客</h4>
+                        <div class="nav">
+                            <a href="blog.html" class="nav-item">
+                                <span>提问的智慧</span>
+                            </a>
+                            <a href="#" class="nav-item">
+                                <span>前端学习路线</span>
+                            </a>
+                            <a href="#" class="nav-item">
+                                <span>go学习路线</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="three-wide-column">
+                        <h4 class="title">联系我</h4>
+                        <div class="nav">
+                            <a href="" class="nav-item">
+                                QQ:2313621769
+                            </a>
+                            <a href="" class="nav-item">
+                                Email:2313621769@qq.com
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="seven-wide-column">
+                        <h4 class="title">Blog</h4>
+                        <p class="item">
+                            这是我的个人博客、会分享关于编程、成长、思考相关的任何内容，
+                            希望可以给来到这儿的人有所帮助...
+                        </p>
+                    </div>
+                    
+                </div>
+                <!-- 下划线 -->
+                <div class="underline">
+
+                </div>
+                <!-- 网站的信息 -->
+                <p class="about-blog">
+                    <i></i> 2022 - 2022 Blog designed by<i class="fa fa-gratipay"></i> Lifeline
+                </p>
+            </div>
+        </footer>
+        <!-- 右下角工具栏 -->
+        <div id="tools">
+            <!-- 版心 -->
+            <div class="tool-main">
+                <!-- 向上链接 -->
+                <div class="up">
+                    <a href="#header" >
+                        <i class="fa fa-arrow-up"></i>
+                    </a>
+                </div>
+                <!-- 当前百分比 -->
+                <div class="number">
+                    <p class="text">0%</p>
+                </div>
+                <!-- 向下链接 -->
+                <div class="down">
+                    <a href="#footer">
+                        <i class="fa fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

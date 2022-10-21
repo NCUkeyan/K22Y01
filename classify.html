@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冷暖自知</title>
+    <!--引入font-awesome图形文字组件库，4.7.0版本-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <!--引入jQuery -->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <!--公共css样式-->
+    <link rel="stylesheet" href="./css/publicCss.css">
+    <!--首页css样式-->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 引入文章css样式 -->
+    <link rel="stylesheet" href="./css/classify.css">
+    <!-- 首页js -->
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <!-- 顶级元素  -->
+    <div class="Top">
+        <!-- 头部 -->
+        <header id ="header">
+            <!-- 版心 -->
+            <div class="header-main">
+                <!-- 左侧logo/网名 -->
+                <div class="logo">
+                    <h3>
+                        Lifeline
+                    </h3>
+                </div>
+                <!-- 左侧搜索栏 -->
+                <div class="search">
+                    <!-- form表单 -->
+                    <form class="search-form">
+                        <!-- 搜索框 -->
+                        <input type="text" placeholder="Search or jump to..." class="search-text">
+                        <!-- 提交按钮 -->
+                        <button class="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <!-- 左侧导航栏 -->
+                <div class="header-nav">
+                    <!-- 版心 -->
+                    <nav class="header-nav-main">
+                        <!-- 导航无序列表 -->
+                        <ul class="nav">
+                            <!-- 设置相对定位作为下拉框的父盒子 -->
+                            <li class="nav-item" data-index="0" id="item-0">
+                                <a href="index.html"> 
+                                    <i class="fa fa-home"></i>
+                                    <span>主页小窝</span>
+                                </a>
+                            </li>
+                            <li class="nav-item" data-index="1" id="item-1">
+                                <a class="to-about" href="about.html"> 
+                                    <i class="fa fa-gratipay"></i>
+                                    <span>了解一下</span>
+                                </a>
+                            </li>
+                            <li class="nav-item" data-index="2" id="item-2">
+                                <a href="#"  class="hidden"> 
+                                    <i class="fa fa-leaf"></i>
+                                    <span>个人随笔</span>
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <!-- 下拉隐藏框 -->
+                                <ul class="submenu">
+                                    <li class="item">
+                                        <a href="article.html" class="to-article">
+                                            <i class="fa fa-pencil-square"></i>
+                                            <span>文章</span>
+                                        </a>
+                                    </li>
+                                    <li class="item" id="now-item">
+                                        <a href="classify.html" class="to-classify">
+                                            <i class="fa fa-list"></i>
+                                            <span>分类</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="tag.html" class="to-tag">
+                                            <i class="fa fa-tag"></i>
+                                            <span>标签</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+            </div>
+        </header>  
+        <!-- 主体 -->
+        <div id="body">
+            <!-- 版心 -->
+            <div class="body-main">
+                <!-- 侧边绝对定位个性栏 -->
+                <div class="aside">
+                    <!-- 版心元素 -->
+                    <div class="aside-main">
+                        <!-- 头像及简介 -->
+                        <div class="author">
+                            <img class="logo" src="./resources/logo.jpg">
+                            <p>Lifeline</p>
+                            <div class="description">前路昭然,你我共进</div>
+                        </div>
+                        <!-- 导航栏 -->
+                        <nav class="state">
+                            <!-- 文章 -->
+                            <div class="item-article">
+                                <a href="article.html" class="to-article">
+                                    <span class="count">16</span>
+                                    <span class="name">文章</span>
+                                </a>
+                            </div>
+                            <!-- 分类 -->
+                            <div class="item-categories">
+                                <a href="classify.html" class="to-classify">
+                                    <span class="count">8</span>
+                                    <span class="name">分类</span>
+                                </a>
+                            </div>
+                            <!-- 标签 -->
+                            <div class="item-tags">
+                                <a href="tag.html" class="to-tag">
+                                    <span class="count">9</span>
+                                    <span class="name">标签</span>
+                                </a>
+                            </div>
+                        </nav>
+                        <!-- 联系方式图标 -->
+                        <div class="social">
+                            <a href="https://github.com/Lifelinexie">
+                                <i class="fa fa-github fa-lg" id="github"></i>
+                            </a>
+                            <a href="https://weibo.com">
+                                <i class="fa fa-weibo fa-lg" id="weiBo"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-address-card fa-lg" id="address-card"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope fa-lg" id="envelope"></i>
+                            </a>
+                        </div>
+                        <!-- 侧边导航条 -->
+                        <ul class="menu"> 
+                            <li class="item" >
+                                <a href="index.html">
+                                    <i class="fa fa-home"></i>
+                                    主页小窝
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="about.html" class="to-about">
+                                    <i class="fa fa-gratipay"></i>
+                                    了解一下
+                                </a>
+                            </li>
+                            <li class="item-dropdown">
+                                
+                                <ul class="item">
+                                    <a href="#" class="to-about">
+                                        <i class="fa fa-leaf"></i>
+                                        个人随笔
+                                </a>
+                                </ul>
+                                <ul class="hidden">
+                                    <li class="menu-item">
+                                        <a class="to-article" href="article.html">
+                                            <i class="fa fa-pencil-square"></i>
+                                            <span>文章</span>
+                                        </a>
+                                        
+                                    </li>
+                                    <li class="menu-item" id="now-index">
+                                        <a class="to-classify" href="classify.html">
+                                            <i class="fa fa-list"></i>
+                                            <span>分类</span>
+                                        </a>
+                                        
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="to-tag" href="tag.html">
+                                            <i class="fa fa-tag"></i>
+                                        <span>标签</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>            
+                    </div>
+                </div>
+                <!-- 文章卡片 -->
+                <div class="article">
+                    <!-- 版心 -->
+                    <div class="article-main">
+                        <div class="item">
+                            <h2 class="header">
+                                <a href="index.html">首页</a>
+                                <small>/</small>
+                                目前共计 8 个分类
+                            </h2>
+                        </div>
+                        <div class="item">    
+                            <h2 class="header">
+                                <a href="#">学习路线</a>
+                                <small>( 8 )</small>
+                            </h2>
+                            <h3 class="section">
+                                <a href="#">前端学习路线</a>
+                                <small>( 2 )</small>
+                            </h3>
+                            <h3 class="section">
+                                <a href="#">java学习路线</a>
+                                <small>( 3 )</small>
+                            </h3>
+                            <h3 class="section">
+                                <a href="#">go学习路线</a>
+                                <small>( 2 )</small>
+                            </h3>
+                            <h3 class="section">
+                                <a href="#">Python学习路线</a>
+                                <small>( 2 )</small>
+                            </h3>
+                        </div>
+                        <div class="item">    
+                            <h2 class="header">
+                                <a href="#">计算机基础</a>
+                                <small>( 4 )</small>
+                            </h2>
+                            <h3 class="section">
+                                <a href="#">计算机网路</a>
+                                <small>( 2 )</small>
+                            </h3>
+                            <h3 class="section">
+                                <a href="#">计算机组成原理</a>
+                                <small>( 2 )</small>
+                            </h3>
+                        </div>
+                        <div class="item">    
+                            <h2 class="header">
+                                <a href="#">Others</a>
+                                <small>( 1 )</small>
+                            </h2>
+                            <h3 class="section">
+                                <a href="blog.html">提问的智慧</a>
+                                <small>( 1 )</small>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- 页脚信息 -->
+        <footer id="footer">
+            <!-- 版心 -->
+            <div class="footer-main">
+                <!-- 关于我的信息 -->
+                <div class="about-me">
+                    <!-- 微信二维码 -->
+                    <div class="three-wide-column">
+                        <div class="link-list">
+                            <div class="main">
+                                <img src="./resources/WeChart.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three-wide-column">
+                        <h4 class="title">最新博客</h4>
+                        <div class="nav">
+                            <a href="blog.html" class="nav-item">
+                                <span>提问的智慧</span>
+                            </a>
+                            <a href="#" class="nav-item">
+                                <span>前端学习路线</span>
+                            </a>
+                            <a href="#" class="nav-item">
+                                <span>go学习路线</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="three-wide-column">
+                        <h4 class="title">联系我</h4>
+                        <div class="nav">
+                            <a href="#" class="nav-item">
+                                QQ:2313621769
+                            </a>
+                            <a href="#" class="nav-item">
+                                Email:2313621769@qq.com
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="seven-wide-column">
+                        <h4 class="title">Blog</h4>
+                        <p class="item">
+                            这是我的个人博客、会分享关于编程、成长、思考相关的任何内容，
+                            希望可以给来到这儿的人有所帮助...
+                        </p>
+                    </div>
+                    
+                </div>
+                <!-- 下划线 -->
+                <div class="underline">
+
+                </div>
+                <!-- 网站的信息 -->
+                <p class="about-blog">
+                    <i></i> 2022 - 2022 Blog designed by<i class="fa fa-gratipay"></i> Lifeline
+                </p>
+            </div>
+        </footer>
+        <!-- 右下角工具栏 -->
+        <div id="tools">
+            <!-- 版心 -->
+            <div class="tool-main">
+                <!-- 向上链接 -->
+                <div class="up">
+                    <a href="#header" >
+                        <i class="fa fa-arrow-up"></i>
+                    </a>
+                </div>
+                <!-- 当前百分比 -->
+                <div class="number">
+                    <p class="text">0%</p>
+                </div>
+                <!-- 向下链接 -->
+                <div class="down">
+                    <a href="#footer">
+                        <i class="fa fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
