@@ -1,0 +1,21 @@
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: table;
+    clear :both;
+}
+body{
+    min-width: 1226px;
+    /*防止缩小的时候产生溢出*/
+    color: black;
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.w{
+    
+    width: 1226px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
